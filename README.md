@@ -4,7 +4,7 @@
 
 ## About WinClean
 
-WinClean is a command line tool that optimizes and cleans your Windows 10 installation at any time. WinClean can even uninstall any bloatware and help you set up all your settings and install your favorite programs on a new installation. It even suggests which programs could fit your installation. 
+WinClean is a command line tool that optimizes and cleans your Windows 10 installation at any time. WinClean can even uninstall any bloatware and help you set up all your settings and install your favorite programs on a new installation. It even suggests which programs could fit your installation! 
 
 You can run WinClean at any time and WinClean will do the rest for you, but is still makes sure that you can set up your system completely to your liking. 
 
@@ -12,9 +12,9 @@ You can run WinClean at any time and WinClean will do the rest for you, but is s
 
 Please note that WinClean is still in **very early development** so many features aren't implemented yet. Check back here in a few weeks to see if there are any new updates!
 
-Also important to mention is that WinClean doesn't have a certificate yet! That means that your computer will warn you multiple times before starting WinClean that this program might be unsafe. It might even mistake WinClean for a virus, because WinClean has to access low-level system commands and has to run them as an administrator.
+Also important to mention is that WinClean doesn't have a certificate yet! That means that your computer will warn you multiple times before starting WinClean that WinClean might be unsafe. It might even mistake WinClean for malware, because WinClean has to access low-level system commands and has to run them as an administrator.
 
-If you're unsure about downloading WinClean you can wait until we have a certificate or try it out on a virtual machine first or just look at the source code (if that's your thing ;) )
+If you're unsure about downloading WinClean you can wait until we have a certificate or try it out on a virtual machine first or just look at the source code (if that's your thing :wink: )
 
 ## Features
 
