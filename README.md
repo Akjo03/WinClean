@@ -6,7 +6,7 @@
 
 WinClean is a command line tool that optimizes and cleans your Windows 10 installation at any time. WinClean can even uninstall any bloatware and help you set up all your settings and install your favorite programs on a new installation. It can even suggest which programs would fit your installation. 
 
-You can run it at any time and WinClean will do the rest for you, but also make sure you can still set up your system completely to your liking. 
+You can run WinClean at any time and WinClean will do the rest for you, but also make sure you can still set up your system completely to your liking. 
 
 ## Important Notes
 
