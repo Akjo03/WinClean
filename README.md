@@ -8,6 +8,8 @@ WinClean is a command line tool that optimizes and cleans your Windows 10 instal
 
 You can run it at any time and WinClean will do the rest for you, but also make sure you can still set up your system completely to your liking. 
 
+## Important Notes
+
 Please note that WinClean is still in **very early development** so many features aren't implemented yet. Check back here in a few weeks to see if there are any new updates!
 
 Also important to mention is that WinClean doesn't have a certificate yet! That means that your computer will warn you multiple times before starting WinClean that this program might be unsafe. It might even mistake WinClean for a virus, because WinClean has to access low-level system commands and has to run them as an administrator.
