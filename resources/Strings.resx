@@ -121,6 +121,18 @@
     <value>strings.EarlyDevelopmentMessage</value>
     <comment>WinClean is still in early development! This version isn't finished yet... please wait for updates!</comment>
   </data>
+  <data name="EnterToContinue" xml:space="preserve">
+    <value>strings.EnterToContinue</value>
+    <comment>Press enter to continue...</comment>
+  </data>
+  <data name="ExitingWithExitCode" xml:space="preserve">
+    <value>strings.ExitingWithExitCode</value>
+    <comment>Exiting with exit code {exitCode}...</comment>
+  </data>
+  <data name="FatalErrorOccured" xml:space="preserve">
+    <value>strings.FatalErrorOccured</value>
+    <comment>A fatal error occurred...</comment>
+  </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>strings.WelcomeMessage</value>
     <comment>Welcome to WinClean!</comment>

@@ -1,8 +1,9 @@
 ﻿using WinClean.resources;
 
 using System;
-using System.Globalization;
-using System.Threading;
+
+using static WinClean.ConsoleHelper;
+using static WinClean.LocaleHelper;
 
 namespace WinClean {
     /// <summary>
@@ -20,9 +21,11 @@ namespace WinClean {
         /// </summary>
         /// <param name="args">Command line arguments</param>
         public static void Main(string[] args) {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-us");
-            Console.WriteLine(Strings.WelcomeMessage);
-            Console.WriteLine(Strings.EarlyDevelopmentMessage);
+            SetLang("en-us");
+            ConsoleClear();
+            ConsoleTitle("Welcome");
+            ConsoleWrite(Strings.WelcomeMessage);
+            ConsoleWrite(Strings.EarlyDevelopmentMessage);
             Console.ReadLine();
         }
     }
