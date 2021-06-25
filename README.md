@@ -1,4 +1,4 @@
-﻿![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/downloads-pre/Akjo03/WinClean/latest/total?label=Downloads (latest)&style=flat-square) ![GitHub](https://img.shields.io/github/license/Akjo03/WinClean?label=License&style=flat-square) ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Akjo03/WinClean?label=Code Quaility&style=flat-square)
+﻿![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/downloads-pre/Akjo03/WinClean/latest/total?label=Downloads%20(latest)&style=flat-square) ![GitHub](https://img.shields.io/github/license/Akjo03/WinClean?label=License&style=flat-square) ![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Akjo03/WinClean?label=Code%20Quaility&style=flat-square)
 
 # WinClean
 
