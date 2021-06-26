@@ -36,7 +36,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute.
 
 ## Deployment
 
-If you want to deploy WinClean you can just run the deploy.bat file. This will create two files under `bin/Release/netcoreapp3.1/win-x64/publish`. 
+If you want to deploy WinClean you can just run the deploy.bat file. This will create two files under `bin/Release/netcoreapp3.1/win-x64/publish`. You can change the version number and the platform to build on inside the deploy.bat file. More info will be added on the wiki soon!
 
 If you want to make a release you can package these two files with WinRAR into a self-extracting archive. Instructions on how to create such a self-extracting archive as intended will be available on the wiki soon. Until then please do not make a release yet unless you know how to do so (which includes more than just creating a self-extracting archive with WinRAR).
 
