@@ -118,35 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CancelEventMessage" xml:space="preserve">
-    <value>Canceled WinClean! Finishing up...</value>
+    <value>WinClean wurde abgebrochen! Wird fertiggestellt...</value>
     <comment>Canceled WinClean! Finishing up...</comment>
   </data>
   <data name="EarlyDevelopmentMessage" xml:space="preserve">
-    <value>WinClean is still in early development! This version isn't finished yet... please wait for updates!</value>
+    <value>WinClean befindet sich noch in der frühen Entwicklung! Diese Version ist noch nicht fertig... bitte warten Sie auf Updates!</value>
     <comment>WinClean is still in early development! This version isn't finished yet... please wait for updates!</comment>
   </data>
   <data name="EnterToContinue" xml:space="preserve">
-    <value>Press enter to continue...</value>
+    <value>Drücken Sie die Eingabetaste, um fortzufahren...</value>
     <comment>Press enter to continue...</comment>
   </data>
   <data name="EnterToExit" xml:space="preserve">
-    <value>Press enter to exit WinClean...</value>
+    <value>Drücken Sie die Eingabetaste, um WinClean zu beenden...</value>
     <comment>Press enter to exit WinClean...</comment>
   </data>
   <data name="ExitingWithExitCode" xml:space="preserve">
-    <value>Exiting with exit code {exitCode}...</value>
+    <value>Beendet mit Exit-Code {exitCode}...</value>
     <comment>Exiting with exit code {exitCode}...</comment>
   </data>
   <data name="FatalErrorOccured" xml:space="preserve">
-    <value>A fatal error occurred...</value>
+    <value>Ein schwerwiegender Fehler ist aufgetreten...</value>
     <comment>A fatal error occurred...</comment>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
-    <value>Welcome to WinClean!</value>
+    <value>Willkommen bei WinClean!</value>
     <comment>Welcome to WinClean!</comment>
   </data>
   <data name="WelcomeTitle" xml:space="preserve">
-    <value>Welcome</value>
+    <value>Willkommen</value>
     <comment>Welcome</comment>
   </data>
 </root>
