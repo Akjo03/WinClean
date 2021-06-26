@@ -13,4 +13,3 @@ echo [91mError on deploying WinClean![0m
 goto end
 :end
 pause.
-exit

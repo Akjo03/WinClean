@@ -2,55 +2,67 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Diagnostics;
 
 namespace WinClean {
     public class ConsoleHelper {
         // === Console Output Methods ===
 
-        public static void ConsoleWrite(string text) {
+        public void Write(string text) {
             Console.WriteLine("[WinClean] " + text);
         }
 
-        public static void ConsoleWrite(string name, string text) {
-            Console.WriteLine("[" + name + "] " + text);
+        public void Write(string name, string text) {
+            if (name != null) {
+                if (name.Length <= 0) {
+                    Console.WriteLine(text);
+                }
+                else {
+                    Console.WriteLine("[" + name + "] " + text);
+                }
+            }
+            else {
+                Write(text);
+            }
         }
 
-        public static void ConsoleWrite(string text, ConsoleColor color) {
+        public void Write(string text, ConsoleColor color) {
             Console.ForegroundColor = color;
-            Console.WriteLine("[WinClean] " + text);
+            Write("[WinClean] " + text);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        public static void ConsoleWrite(string name, string text, ConsoleColor color) {
+        public void Write(string name, string text, ConsoleColor color) {
             Console.ForegroundColor = color;
-            Console.WriteLine("[" + name + "] " + text);
+            Write(name, text);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        public static void ConsoleWriteError(string text) {
-            ConsoleWrite("ERROR", text, ConsoleColor.Red);
+        public void WriteError(string text) {
+            Write("ERROR", text, ConsoleColor.Red);
         }
 
-        public static void ConsoleWriteWarn(string text) {
-            ConsoleWrite("WARN", text, ConsoleColor.DarkYellow);
+        public void WriteWarn(string text) {
+            Write("WARN", text, ConsoleColor.DarkYellow);
         }
 
-        public static void ConsoleFatal(int exitCode, string reason) {
-            ConsoleWrite("FATAL", Strings.FatalErrorOccured + " | Reason: " + reason);
-            ConsoleExit(exitCode, true);
+        public void FatalExit(int exitCode, string reason) {
+            Write("FATAL", Strings.FatalErrorOccured + " | Reason: " + reason);
+            Exit(exitCode, true);
         }
 
-        public static void ConsoleTitle(string title) {
+        public void Title(string title) {
             Console.Title = "WinClean " + WinClean.Version + " | " + title;
         }
 
-        public static void ConsoleClear() {
+        public void Clear() {
             Console.Clear();
         }
 
-        public static void ConsoleExit(int exitCode, bool message) {
+        public void Exit(int exitCode, bool message) {
             if (message) {
-                ConsoleWrite(Strings.ExitingWithExitCode.Replace("{exitCode}", exitCode.ToString()));
+                Write(Strings.ExitingWithExitCode.Replace("{exitCode}", exitCode.ToString()));
             }
             Environment.Exit(exitCode);
         }
@@ -86,8 +98,8 @@ namespace WinClean {
             public string FontName;
         }
 
-        public static FontInfo[] ConsoleFont(string font, short fontSize = 0) {
-            ConsoleWrite("Set Current Font: " + font);
+        public FontInfo[] Font(string font, short fontSize = 0) {
+            Write("Set Current Font: " + font);
 
             FontInfo before = new FontInfo {
                 cbSize = Marshal.SizeOf<FontInfo>()
@@ -106,7 +118,7 @@ namespace WinClean {
 
                 // Get some settings from current font.
                 if (!SetCurrentConsoleFontEx(ConsoleOutputHandle, false, ref set)) {
-                    ConsoleWriteError(new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error()).Message);
+                    WriteError(new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error()).Message);
                 }
 
                 FontInfo after = new FontInfo {
@@ -115,8 +127,9 @@ namespace WinClean {
                 GetCurrentConsoleFontEx(ConsoleOutputHandle, false, ref after);
 
                 return new[] { before, set, after };
-            } else {
-                ConsoleWriteError(new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error()).Message);
+            }
+            else {
+                WriteError(new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error()).Message);
                 return null;
             }
         }
@@ -132,7 +145,7 @@ namespace WinClean {
         [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
         public static extern IntPtr SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
 
-        public static void ConsoleWindowPosition(int x, int y) {
+        public void WindowPosition(int x, int y) {
             SetWindowPos(ConsoleWindow, 0, x, y, 0, 0, SWP_NOSIZE);
         }
     }

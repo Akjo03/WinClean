@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CancelEventMessage" xml:space="preserve">
+    <value>strings.CancelEventMessage</value>
+    <comment>Canceled WinClean! Finishing up...</comment>
+  </data>
   <data name="EarlyDevelopmentMessage" xml:space="preserve">
     <value>strings.EarlyDevelopmentMessage</value>
     <comment>WinClean is still in early development! This version isn't finished yet... please wait for updates!</comment>
@@ -124,6 +128,10 @@
   <data name="EnterToContinue" xml:space="preserve">
     <value>strings.EnterToContinue</value>
     <comment>Press enter to continue...</comment>
+  </data>
+  <data name="EnterToExit" xml:space="preserve">
+    <value>strings.EnterToExit</value>
+    <comment>Press enter to exit WinClean...</comment>
   </data>
   <data name="ExitingWithExitCode" xml:space="preserve">
     <value>strings.ExitingWithExitCode</value>
@@ -136,5 +144,9 @@
   <data name="WelcomeMessage" xml:space="preserve">
     <value>strings.WelcomeMessage</value>
     <comment>Welcome to WinClean!</comment>
+  </data>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>strrings.WelcomeTitle</value>
+    <comment>Welcome</comment>
   </data>
 </root>

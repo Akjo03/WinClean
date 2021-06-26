@@ -5,10 +5,17 @@ using static WinClean.ConsoleHelper;
 
 namespace WinClean {
     public class LocaleHelper {
-        public static void SetLang(string locale) {
+
+        private ConsoleHelper consoleRef;
+
+        public LocaleHelper(ConsoleHelper consoleRef) {
+            this.consoleRef = consoleRef;
+        }
+
+        public void SetLang(string locale) {
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(locale);
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(locale);
-            ConsoleWrite("Changed language to " + locale);
+            consoleRef.Write("Changed language to " + locale);
         }
     }
 }
