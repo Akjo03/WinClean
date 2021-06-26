@@ -61,6 +61,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.CancelEventMessage ähnelt.
+        /// </summary>
+        public static string CancelEventMessage {
+            get {
+                return ResourceManager.GetString("CancelEventMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.EarlyDevelopmentMessage ähnelt.
         /// </summary>
         public static string EarlyDevelopmentMessage {
@@ -75,6 +84,15 @@ namespace WinClean.resources {
         public static string EnterToContinue {
             get {
                 return ResourceManager.GetString("EnterToContinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterToExit ähnelt.
+        /// </summary>
+        public static string EnterToExit {
+            get {
+                return ResourceManager.GetString("EnterToExit", resourceCulture);
             }
         }
         
@@ -102,6 +120,15 @@ namespace WinClean.resources {
         public static string WelcomeMessage {
             get {
                 return ResourceManager.GetString("WelcomeMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strrings.WelcomeTitle ähnelt.
+        /// </summary>
+        public static string WelcomeTitle {
+            get {
+                return ResourceManager.GetString("WelcomeTitle", resourceCulture);
             }
         }
     }
