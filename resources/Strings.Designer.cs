@@ -70,6 +70,33 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.EnterToContinue ähnelt.
+        /// </summary>
+        public static string EnterToContinue {
+            get {
+                return ResourceManager.GetString("EnterToContinue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ExitingWithExitCode ähnelt.
+        /// </summary>
+        public static string ExitingWithExitCode {
+            get {
+                return ResourceManager.GetString("ExitingWithExitCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.FatalErrorOccured ähnelt.
+        /// </summary>
+        public static string FatalErrorOccured {
+            get {
+                return ResourceManager.GetString("FatalErrorOccured", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.WelcomeMessage ähnelt.
         /// </summary>
         public static string WelcomeMessage {
