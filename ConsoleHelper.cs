@@ -106,7 +106,6 @@ namespace WinClean {
             };
 
             if (GetCurrentConsoleFontEx(ConsoleOutputHandle, false, ref before)) {
-
                 FontInfo set = new FontInfo {
                     cbSize = Marshal.SizeOf<FontInfo>(),
                     FontIndex = 0,
@@ -127,8 +126,7 @@ namespace WinClean {
                 GetCurrentConsoleFontEx(ConsoleOutputHandle, false, ref after);
 
                 return new[] { before, set, after };
-            }
-            else {
+            } else {
                 WriteError(new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error()).Message);
                 return null;
             }

@@ -5,7 +5,6 @@ using static WinClean.ConsoleHelper;
 
 namespace WinClean {
     public class LocaleHelper {
-
         private ConsoleHelper consoleRef;
 
         public LocaleHelper(ConsoleHelper consoleRef) {

@@ -14,7 +14,6 @@ namespace WinClean {
     /// For Version: v0.0.0
     /// </summary>
     public class WinClean {
-
         public static string Version { get; } = "v0.0.0";
 
         private ConsoleHelper console;
