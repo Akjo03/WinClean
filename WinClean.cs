@@ -21,6 +21,7 @@ namespace WinClean {
         /// </summary>
         /// <param name="args">Command line arguments</param>
         public static void Main(string[] args) {
+            ConsoleFont("Consolas", 24);
             SetLang("en-us");
             ConsoleClear();
             ConsoleTitle("Welcome");

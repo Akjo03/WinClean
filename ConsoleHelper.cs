@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 namespace WinClean {
     public class ConsoleHelper {
         // === Console Output Methods ===
+
         public static void ConsoleWrite(string text) {
             Console.WriteLine("[WinClean] " + text);
         }
@@ -39,13 +40,6 @@ namespace WinClean {
             ConsoleExit(exitCode, true);
         }
 
-        public static void ConsoleExit(int exitCode, bool message) {
-            if (message) {
-                ConsoleWrite(Strings.ExitingWithExitCode.Replace("{exitCode}", exitCode.ToString()));
-            }
-            Environment.Exit(exitCode);
-        }
-
         public static void ConsoleTitle(string title) {
             Console.Title = "WinClean " + WinClean.Version + " | " + title;
         }
@@ -54,10 +48,15 @@ namespace WinClean {
             Console.Clear();
         }
 
-        // === Console Input Methods ===
-
+        public static void ConsoleExit(int exitCode, bool message) {
+            if (message) {
+                ConsoleWrite(Strings.ExitingWithExitCode.Replace("{exitCode}", exitCode.ToString()));
+            }
+            Environment.Exit(exitCode);
+        }
 
         // === Console Font ===
+
         private const int FixedWidthTrueType = 54;
         private const int StandardOutputHandle = -11;
 
@@ -87,7 +86,7 @@ namespace WinClean {
             public string FontName;
         }
 
-        public static FontInfo[] SetCurrentFont(string font, short fontSize = 0) {
+        public static FontInfo[] ConsoleFont(string font, short fontSize = 0) {
             ConsoleWrite("Set Current Font: " + font);
 
             FontInfo before = new FontInfo {
@@ -120,6 +119,21 @@ namespace WinClean {
                 ConsoleWriteError(new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error()).Message);
                 return null;
             }
+        }
+
+        // === Console Window Methods ===
+        const int SWP_NOSIZE = 0x0001;
+
+        [DllImport("kernel32.dll", ExactSpelling = true)]
+        private static extern IntPtr GetConsoleWindow();
+
+        private static IntPtr ConsoleWindow = GetConsoleWindow();
+
+        [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
+        public static extern IntPtr SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
+
+        public static void ConsoleWindowPosition(int x, int y) {
+            SetWindowPos(ConsoleWindow, 0, x, y, 0, 0, SWP_NOSIZE);
         }
     }
 }
