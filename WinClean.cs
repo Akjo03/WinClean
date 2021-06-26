@@ -3,9 +3,6 @@
 using System;
 using System.Threading;
 
-using static WinClean.ConsoleHelper;
-using static WinClean.LocaleHelper;
-
 namespace WinClean {
     /// <summary>
     /// Main class for WinClean
@@ -16,12 +13,13 @@ namespace WinClean {
     public class WinClean {
         public static string Version { get; } = "v0.0.0";
 
-        private ConsoleHelper console;
-        private LocaleHelper locale;
+        private ConsoleHelper Console { get; }
+        private LocaleHelper Locale { get; }
 
-        private WinClean() {
-            console = new ConsoleHelper();
-            locale = new LocaleHelper(console);
+        private WinClean(string[] args) {
+            Console = new ConsoleHelper();
+            Console.Write(args.ToString());
+            Locale = new LocaleHelper(Console);
             Start();
         }
 
@@ -30,20 +28,18 @@ namespace WinClean {
         /// </summary>
         /// <param name="args">Command line arguments</param>
         public static void Main(string[] args) {
-            new WinClean();
+            new WinClean(args);
         }
 
         public void Start() {
-            console.Font("Consolas", 24);
-            locale.SetLang("en-us");
-            console.Clear();
-            console.Title(Strings.WelcomeTitle);
-            console.Write(Strings.WelcomeMessage);
-            console.Write(Strings.EarlyDevelopmentMessage);
-            console.Write("", "");
-            console.Write(Strings.EnterToExit);
-            Console.ReadLine();
-            console.Exit(0, false);
+            Console.Font("Consolas", 24);
+            Locale.SetLang("en-us");
+            Console.Clear();
+            Console.Title(Strings.WelcomeTitle);
+            Console.Write(Strings.WelcomeMessage);
+            Console.Write(Strings.EarlyDevelopmentMessage);
+            Thread.Sleep(5000);
+            Console.Exit(0, false);
         }
     }
 }

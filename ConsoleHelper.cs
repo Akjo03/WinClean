@@ -138,7 +138,7 @@ namespace WinClean {
         [DllImport("kernel32.dll", ExactSpelling = true)]
         private static extern IntPtr GetConsoleWindow();
 
-        private static IntPtr ConsoleWindow = GetConsoleWindow();
+        private static IntPtr ConsoleWindow { get; } = GetConsoleWindow();
 
         [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
         public static extern IntPtr SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
