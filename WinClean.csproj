@@ -14,9 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="resources\Strings.en-US.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="resources\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
