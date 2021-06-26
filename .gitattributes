@@ -1,1 +1,1 @@
-﻿deploy.bat -linguist-vendored
+﻿deploy.bat linguist-vendored
