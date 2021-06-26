@@ -116,9 +116,9 @@ namespace WinClean {
                 GetCurrentConsoleFontEx(ConsoleOutputHandle, false, ref after);
 
                 return new[] { before, set, after };
-            }
-            else {
+            } else {
                 ConsoleWriteError(new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error()).Message);
+                return null;
             }
         }
     }
