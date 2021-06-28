@@ -72,6 +72,7 @@ namespace WinClean {
                         // If locale already set through arguments set it
                         if (localeResult != null) {
                             localeRef.SetLang(localeResult);
+                            consoleRef.Clear();
                         }
 
                         // Write the Help for WinClean arguments to the console and exit without clearing the console
