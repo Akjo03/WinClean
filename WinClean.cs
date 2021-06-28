@@ -12,13 +12,11 @@ namespace WinClean {
     /// </summary>
     public class WinClean {
         public static string Version { get; } = "v0.0.0";
-
         private ConsoleHelper Console { get; }
         private LocaleHelper Locale { get; }
 
         private WinClean(string[] args) {
             Console = new ConsoleHelper();
-            Console.Write(args.ToString());
             Locale = new LocaleHelper(Console);
             Start();
         }
