@@ -100,6 +100,26 @@ namespace WinClean {
             }
         }
 
+        public int GetReadingTime(string text) {
+            string[] words = text.Split(" ");
+            int wordCount = 0;
+            foreach (string word in words) {
+                if (word.Length > 12) {
+                    wordCount++;
+                }
+                wordCount++;
+            }
+            return Convert.ToInt32((float) wordCount / 200 * 60 * 1000);
+        }
+
+        public int GetReadingTime(List<string> texts) {
+            int readingTime = 0;
+            foreach (string text in texts) {
+                readingTime += GetReadingTime(text);
+            }
+            return readingTime;
+        }
+
         public SelectionOption CreateSelection(string question, List<SelectionOption> options) {
             Write("", "");
             Write(question);

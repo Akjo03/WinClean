@@ -51,7 +51,7 @@ namespace WinClean {
             Console.Title(Strings.WelcomeTitle);
             Console.Write(Strings.WelcomeMessage);
             Console.Write(Strings.EarlyDevelopmentMessage);
-            Thread.Sleep(5000);
+            Thread.Sleep(Console.GetReadingTime(new List<string>() { Strings.WelcomeMessage, Strings.EarlyDevelopmentMessage }));
             Console.Exit(0, false);
         }
 
