@@ -9,16 +9,16 @@ namespace WinClean {
         // === Console Output ===
 
         public void Write(string text) {
-            Console.WriteLine("[WinClean] " + text);
+            Console.WriteLine(" [WinClean] " + text);
         }
 
         public void Write(string name, string text) {
             if (name != null) {
                 if (name.Length <= 0) {
-                    Console.WriteLine(text);
+                    Console.WriteLine(" " + text);
                 }
                 else {
-                    Console.WriteLine("[" + name + "] " + text);
+                    Console.WriteLine(" [" + name + "] " + text);
                 }
             }
             else {
@@ -28,7 +28,7 @@ namespace WinClean {
 
         public void Write(string text, ConsoleColor color) {
             Console.ForegroundColor = color;
-            Write("[WinClean] " + text);
+            Write(text);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
