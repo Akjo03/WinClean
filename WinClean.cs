@@ -29,15 +29,15 @@ namespace WinClean {
             // Create the locale helper and set the font and default language
             Console.Font("Consolas", 24);
             Locale = new LocaleHelper(Console);
-            Locale.SetLang("en-us");
+            Locale.SetLocale("en-us");
             Console.Clear();
+
+            // Create the registry helper
+            Registry = new RegistryHelper();
 
             // Get command line arguments
             ArgumentParser argumentParser = new ArgumentParser(Console, Locale);
             (List<int> parts, string locale) = argumentParser.Parse(args);
-
-            // Create the registry helper
-            Registry = new RegistryHelper();
 
             // Start the WinClean program
             Start(parts, locale);
@@ -54,9 +54,13 @@ namespace WinClean {
         public void Start(List<int> parts, string locale) {
             Console.Clear();
 
+            // Get language from user if part 0 is activated and not set already
             if (parts.Contains(0) && locale == null) {
                 Part0_SelectLanguage();
+            } else if (locale != null) {
+                Locale.SetLocale(locale);
             }
+            Registry.Write("locale", Locale.GetLocale());
 
             Console.Clear();
             Console.Title(Strings.WelcomeTitle);
@@ -74,15 +78,15 @@ namespace WinClean {
             });
             switch (languageSelection.number) {
                 case 1:
-                    Locale.SetLang("en-us");
+                    Locale.SetLocale("en-us");
                     break;
 
                 case 2:
-                    Locale.SetLang("de-de");
+                    Locale.SetLocale("de-de");
                     break;
 
                 default:
-                    Locale.SetLang("en-us");
+                    Locale.SetLocale("en-us");
                     break;
             }
             Console.Clear();
