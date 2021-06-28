@@ -16,19 +16,30 @@ namespace WinClean {
         public static List<int> availableParts = new List<int>() { 0 };
         public static List<string> availableLocale = new List<string>() { "en-us", "de-de" };
 
-        private ConsoleHelper Console { get; }
-        private LocaleHelper Locale { get; }
+        private ConsoleHelper Console;
+
+        private LocaleHelper Locale;
+
+        private RegistryHelper Registry;
 
         private WinClean(string[] args) {
+            // Create the console helper
             Console = new ConsoleHelper();
 
+            // Create the locale helper and set the font and default language
             Console.Font("Consolas", 24);
             Locale = new LocaleHelper(Console);
-            Locale.SetLang("en-us");
+            Locale.SetLocale("en-us");
             Console.Clear();
 
+            // Create the registry helper
+            Registry = new RegistryHelper();
+
+            // Get command line arguments
             ArgumentParser argumentParser = new ArgumentParser(Console, Locale);
             (List<int> parts, string locale) = argumentParser.Parse(args);
+
+            // Start the WinClean program
             Start(parts, locale);
         }
 
@@ -43,9 +54,13 @@ namespace WinClean {
         public void Start(List<int> parts, string locale) {
             Console.Clear();
 
+            // Get language from user if part 0 is activated and not set already
             if (parts.Contains(0) && locale == null) {
                 Part0_SelectLanguage();
+            } else if (locale != null) {
+                Locale.SetLocale(locale);
             }
+            Registry.Write("locale", Locale.GetLocale());
 
             Console.Clear();
             Console.Title(Strings.WelcomeTitle);
@@ -63,15 +78,15 @@ namespace WinClean {
             });
             switch (languageSelection.number) {
                 case 1:
-                    Locale.SetLang("en-us");
+                    Locale.SetLocale("en-us");
                     break;
 
                 case 2:
-                    Locale.SetLang("de-de");
+                    Locale.SetLocale("de-de");
                     break;
 
                 default:
-                    Locale.SetLang("en-us");
+                    Locale.SetLocale("en-us");
                     break;
             }
             Console.Clear();

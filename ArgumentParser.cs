@@ -71,7 +71,7 @@ namespace WinClean {
                     } else if (arg == "-h" || arg == "-?") {
                         // If locale already set through arguments set it
                         if (localeResult != null) {
-                            localeRef.SetLang(localeResult);
+                            localeRef.SetLocale(localeResult);
                             consoleRef.Clear();
                         }
 
