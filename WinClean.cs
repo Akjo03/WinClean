@@ -27,7 +27,7 @@ namespace WinClean {
             Locale.SetLang("en-us");
             Console.Clear();
 
-            ArgumentParser argumentParser = new ArgumentParser(Console);
+            ArgumentParser argumentParser = new ArgumentParser(Console, Locale);
             (List<int> parts, string locale) = argumentParser.Parse(args);
             Start(parts, locale);
         }
