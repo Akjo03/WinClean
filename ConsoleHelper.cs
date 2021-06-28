@@ -1,6 +1,7 @@
 ﻿using WinClean.resources;
 
 using System;
+using System.Threading;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,8 +62,16 @@ namespace WinClean {
         }
 
         public void Exit(int exitCode, bool message) {
+            Exit(exitCode, message, true);
+        }
+
+        public void Exit(int exitCode, bool message, bool clearOnExit) {
             if (message) {
                 Write(Strings.ExitingWithExitCode.Replace("{exitCode}", exitCode.ToString()));
+                Thread.Sleep(2000);
+            }
+            if (clearOnExit) {
+                Console.Clear();
             }
             Environment.Exit(exitCode);
         }
@@ -97,7 +106,7 @@ namespace WinClean {
             foreach (SelectionOption option in options) {
                 Write("", "           " + option.number + " - " + option.optionText);
             }
-            Console.Write(" [" + Strings.Select + " (" + options.Min(option => option.number) + "-" + options.Max(option => option.number) + ")] > "); string input = Console.ReadLine();
+            Console.Write(" " + Strings.Select + " (" + options.Min(option => option.number) + "-" + options.Max(option => option.number) + ") > "); string input = Console.ReadLine();
             while (true) {
                 if (String.IsNullOrWhiteSpace(input)) {
                     WriteError(Strings.SelectionEmpty);
@@ -113,7 +122,7 @@ namespace WinClean {
                         }
                     }
                 }
-                Console.Write(" [" + Strings.Select + " (" + options.Min(option => option.number) + "-" + options.Max(option => option.number) + ")] > "); input = Console.ReadLine();
+                Console.Write(" " + Strings.Select + " (" + options.Min(option => option.number) + "-" + options.Max(option => option.number) + ") > "); input = Console.ReadLine();
             }
         }
 

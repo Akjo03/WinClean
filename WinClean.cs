@@ -12,12 +12,20 @@ namespace WinClean {
     /// </summary>
     public class WinClean {
         public static string Version { get; } = "v0.0.0";
+
+        public static List<int> availableParts = new List<int>() { 0 };
+        public static List<string> availableLocale = new List<string>() { "en-us", "de-de" };
+
         private ConsoleHelper Console { get; }
         private LocaleHelper Locale { get; }
 
         private WinClean(string[] args) {
             Console = new ConsoleHelper();
+
+            Console.Font("Consolas", 24);
             Locale = new LocaleHelper(Console);
+            Locale.SetLang("en-us");
+            Console.Clear();
 
             ArgumentParser argumentParser = new ArgumentParser(Console);
             (List<int> parts, string locale) = argumentParser.Parse(args);
@@ -33,17 +41,13 @@ namespace WinClean {
         }
 
         public void Start(List<int> parts, string locale) {
-            Console.Font("Consolas", 24);
             Console.Clear();
 
             if (parts.Contains(0) && locale == null) {
                 Part0_SelectLanguage();
-            } else {
-                if (locale != null) {
-                    Locale.SetLang(locale);
-                }
             }
 
+            Console.Clear();
             Console.Title(Strings.WelcomeTitle);
             Console.Write(Strings.WelcomeMessage);
             Console.Write(Strings.EarlyDevelopmentMessage);
@@ -52,7 +56,6 @@ namespace WinClean {
         }
 
         private void Part0_SelectLanguage() {
-            Locale.SetLang("en-us");
             Console.Clear();
             var languageSelection = Console.CreateSelection(Strings.Selection_Language, new List<ConsoleHelper.SelectionOption>() {
                 new ConsoleHelper.SelectionOption(1, Strings.Selection_Language_AnsEnglish),
