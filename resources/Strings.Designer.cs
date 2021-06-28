@@ -61,6 +61,51 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ArgParse.Error ähnelt.
+        /// </summary>
+        public static string ArgParse_Error {
+            get {
+                return ResourceManager.GetString("ArgParse.Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ArgParse.Help ähnelt.
+        /// </summary>
+        public static string ArgParse_Help {
+            get {
+                return ResourceManager.GetString("ArgParse.Help", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ArgParse.LocaleNotFound ähnelt.
+        /// </summary>
+        public static string ArgParse_LocaleNotFound {
+            get {
+                return ResourceManager.GetString("ArgParse.LocaleNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ArgParse.PartNotFound ähnelt.
+        /// </summary>
+        public static string ArgParse_PartNotFound {
+            get {
+                return ResourceManager.GetString("ArgParse.PartNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ArgParse.PartNotNumerical ähnelt.
+        /// </summary>
+        public static string ArgParse_PartNotNumerical {
+            get {
+                return ResourceManager.GetString("ArgParse.PartNotNumerical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.CancelEventMessage ähnelt.
         /// </summary>
         public static string CancelEventMessage {

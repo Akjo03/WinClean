@@ -117,6 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArgParse.Error" xml:space="preserve">
+    <value>strings.ArgParse.Error</value>
+    <comment>Error while parsing arguments!</comment>
+  </data>
+  <data name="ArgParse.Help" xml:space="preserve">
+    <value>strings.ArgParse.Help</value>
+    <comment>Help for WinClean arguments is not implemented yet... Please wait for future updates!</comment>
+  </data>
+  <data name="ArgParse.LocaleNotFound" xml:space="preserve">
+    <value>strings.ArgParse.LocaleNotFound</value>
+    <comment>Locale {locale} was not found!</comment>
+  </data>
+  <data name="ArgParse.PartNotFound" xml:space="preserve">
+    <value>strings.ArgParse.PartNotFound</value>
+    <comment>Part "{part_name]" was not found!</comment>
+  </data>
+  <data name="ArgParse.PartNotNumerical" xml:space="preserve">
+    <value>strings.ArgParse.PartNotNumerical</value>
+    <comment>Part " {part_name}" is not a number!</comment>
+  </data>
   <data name="CancelEventMessage" xml:space="preserve">
     <value>strings.CancelEventMessage</value>
     <comment>Canceled WinClean! Finishing up...</comment>
