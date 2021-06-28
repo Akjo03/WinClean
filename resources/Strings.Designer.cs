@@ -115,6 +115,42 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Select ähnelt.
+        /// </summary>
+        public static string Select {
+            get {
+                return ResourceManager.GetString("Select", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.SelectionEmpty ähnelt.
+        /// </summary>
+        public static string SelectionEmpty {
+            get {
+                return ResourceManager.GetString("SelectionEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.SelectionNotInRange ähnelt.
+        /// </summary>
+        public static string SelectionNotInRange {
+            get {
+                return ResourceManager.GetString("SelectionNotInRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.SelectionNotNumerical ähnelt.
+        /// </summary>
+        public static string SelectionNotNumerical {
+            get {
+                return ResourceManager.GetString("SelectionNotNumerical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.WelcomeMessage ähnelt.
         /// </summary>
         public static string WelcomeMessage {
@@ -124,7 +160,7 @@ namespace WinClean.resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die strrings.WelcomeTitle ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.WelcomeTitle ähnelt.
         /// </summary>
         public static string WelcomeTitle {
             get {
