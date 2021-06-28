@@ -31,19 +31,19 @@ namespace WinClean {
             Locale = new LocaleHelper(Console);
             Console.Clear();
 
-            //Check if we are on windows
-            if (!SystemHelper.IsWindows()) {
-                Console.WriteError(Strings.NotWindows);
-                Console.EnterToContinue(Strings.EnterToExit);
-                Console.Exit(-1, false);
-            }
-
             // Create the registry helper
             Registry = new RegistryHelper();
 
             // Get command line arguments
             ArgumentParser argumentParser = new ArgumentParser(Console, Locale);
             (List<int> parts, string locale) = argumentParser.Parse(args);
+
+            //Check if we are on windows
+            if (!SystemHelper.IsWindows()) {
+                Console.WriteError(Strings.NotWindows);
+                Console.EnterToContinue(Strings.EnterToExit);
+                Console.Exit(-1, false);
+            }
 
             // Start the WinClean program
             Start(parts, locale);
@@ -67,6 +67,8 @@ namespace WinClean {
                 Locale.SetLocale(locale);
             }
             Registry.Write("locale", Locale.GetLocale());
+
+            // Check if we are ac
 
             Console.Clear();
             Console.Title(Strings.WelcomeTitle);
