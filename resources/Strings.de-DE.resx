@@ -161,12 +161,16 @@
     <value>Ein schwerwiegender Fehler ist aufgetreten...</value>
     <comment>A fatal error occurred...</comment>
   </data>
+  <data name="NotWindows" xml:space="preserve">
+    <value>WinClean scheint gerade nicht unter Windows zu laufen! WinClean funktioniert nur auf Windows 10</value>
+    <comment>WinClean doesn't seem to be running on Windows! WinClean only works on Windows 10.</comment>
+  </data>
   <data name="Select" xml:space="preserve">
     <value>Auswählen</value>
     <comment>Select</comment>
   </data>
   <data name="Selection.Language" xml:space="preserve">
-    <value>Please select your langauge:</value>
+    <value>Bitte wähle deine Sprache aus:</value>
     <comment>Please select your langauge:</comment>
   </data>
   <data name="Selection.Language.AnsEnglish" xml:space="preserve">
