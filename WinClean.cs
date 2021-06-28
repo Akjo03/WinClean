@@ -16,19 +16,30 @@ namespace WinClean {
         public static List<int> availableParts = new List<int>() { 0 };
         public static List<string> availableLocale = new List<string>() { "en-us", "de-de" };
 
-        private ConsoleHelper Console { get; }
-        private LocaleHelper Locale { get; }
+        private ConsoleHelper Console;
+
+        private LocaleHelper Locale;
+
+        private RegistryHelper Registry;
 
         private WinClean(string[] args) {
+            // Create the console helper
             Console = new ConsoleHelper();
 
+            // Create the locale helper and set the font and default language
             Console.Font("Consolas", 24);
             Locale = new LocaleHelper(Console);
             Locale.SetLang("en-us");
             Console.Clear();
 
+            // Get command line arguments
             ArgumentParser argumentParser = new ArgumentParser(Console, Locale);
             (List<int> parts, string locale) = argumentParser.Parse(args);
+
+            // Create the registry helper
+            Registry = new RegistryHelper();
+
+            // Start the WinClean program
             Start(parts, locale);
         }
 
