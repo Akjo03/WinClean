@@ -26,11 +26,17 @@ namespace WinClean {
             // Create the console helper
             Console = new ConsoleHelper();
 
-            // Create the locale helper and set the font and default language
+            // Create the locale helper and set the font
             Console.Font("Consolas", 24);
             Locale = new LocaleHelper(Console);
-            Locale.SetLocale("en-us");
             Console.Clear();
+
+            //Check if we are on windows
+            if (!SystemHelper.IsWindows()) {
+                Console.WriteError(Strings.NotWindows);
+                Console.EnterToContinue(Strings.EnterToExit);
+                Console.Exit(-1, false);
+            }
 
             // Create the registry helper
             Registry = new RegistryHelper();
@@ -76,7 +82,7 @@ namespace WinClean {
                 new ConsoleHelper.SelectionOption(1, Strings.Selection_Language_AnsEnglish),
                 new ConsoleHelper.SelectionOption(2, Strings.Selection_Language_AnsGerman)
             });
-            switch (languageSelection.number) {
+            switch (languageSelection.Number) {
                 case 1:
                     Locale.SetLocale("en-us");
                     break;

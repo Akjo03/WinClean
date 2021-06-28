@@ -79,12 +79,12 @@ namespace WinClean {
         // === Console Input ===
 
         public struct SelectionOption {
-            public int number { get; }
-            public string optionText { get; }
+            public int Number { get; }
+            public string OptionText { get; }
 
             public SelectionOption(int number, string optionText) {
-                this.number = number;
-                this.optionText = optionText;
+                Number = number;
+                OptionText = optionText;
             }
         }
 
@@ -124,9 +124,9 @@ namespace WinClean {
             Write("", "");
             Write(question);
             foreach (SelectionOption option in options) {
-                Write("", "           " + option.number + " - " + option.optionText);
+                Write("", "           " + option.Number + " - " + option.OptionText);
             }
-            Console.Write(" " + Strings.Select + " (" + options.Min(option => option.number) + "-" + options.Max(option => option.number) + ") > "); string input = Console.ReadLine();
+            Console.Write(" " + Strings.Select + " (" + options.Min(option => option.Number) + "-" + options.Max(option => option.Number) + ") > "); string input = Console.ReadLine();
             while (true) {
                 if (String.IsNullOrWhiteSpace(input)) {
                     WriteError(Strings.SelectionEmpty);
@@ -134,15 +134,15 @@ namespace WinClean {
                     if (!int.TryParse(input, out int selectionNum)) {
                         WriteError(Strings.SelectionNotNumerical);
                     } else {
-                        if (selectionNum >= options.Min(option => option.number) && selectionNum <= options.Max(option => option.number)) {
+                        if (selectionNum >= options.Min(option => option.Number) && selectionNum <= options.Max(option => option.Number)) {
                             Write("", "");
-                            return options.Find(option => option.number == selectionNum);
+                            return options.Find(option => option.Number == selectionNum);
                         } else {
                             WriteError(Strings.SelectionNotInRange);
                         }
                     }
                 }
-                Console.Write(" " + Strings.Select + " (" + options.Min(option => option.number) + "-" + options.Max(option => option.number) + ") > "); input = Console.ReadLine();
+                Console.Write(" " + Strings.Select + " (" + options.Min(option => option.Number) + "-" + options.Max(option => option.Number) + ") > "); input = Console.ReadLine();
             }
         }
 

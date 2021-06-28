@@ -25,7 +25,7 @@ namespace WinClean {
                 foreach (string arg in args) {
                     if (arg.StartsWith("-parts:")) {
                         // If argument "parts" given read them
-                        string argString = arg.Substring(7);
+                        string argString = arg[7..];
                         string[] partsInput = argString.Split(",");
                         if (string.IsNullOrWhiteSpace(string.Join("", partsInput))) {
                             continue;
@@ -56,7 +56,7 @@ namespace WinClean {
                         }
                     } else if (arg.StartsWith("-locale:")) {
                         // If argument "locale" was given get it
-                        string localeInput = arg.Substring(8).Trim();
+                        string localeInput = arg[8..].Trim();
 
                         // Validate the locale given
                         if (WinClean.availableLocale.Contains(localeInput.Trim())) {
