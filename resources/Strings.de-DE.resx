@@ -117,6 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArgParse.Error" xml:space="preserve">
+    <value>Fehler beim Verarbeiten der Argumente!</value>
+    <comment>Error while parsing arguments!</comment>
+  </data>
+  <data name="ArgParse.Help" xml:space="preserve">
+    <value>Die Hilfe für WinClean-Argumente ist noch nicht verfügbar... Bitte warten Sie auf zukünftige Updates!</value>
+    <comment>Help for WinClean arguments is not implemented yet... Please wait for future updates!</comment>
+  </data>
+  <data name="ArgParse.LocaleNotFound" xml:space="preserve">
+    <value>Das Sprachgebiet {locale} wurde nicht gefunden!</value>
+    <comment>Locale {locale} was not found!</comment>
+  </data>
+  <data name="ArgParse.PartNotFound" xml:space="preserve">
+    <value>Teil "{part_name]" wurde nicht gefunden!</value>
+    <comment>Part "{part_name]" was not found!</comment>
+  </data>
+  <data name="ArgParse.PartNotNumerical" xml:space="preserve">
+    <value>Teil " {part_name}" ist keine Zahl!</value>
+    <comment>Part " {part_name}" is not a number!</comment>
+  </data>
   <data name="CancelEventMessage" xml:space="preserve">
     <value>WinClean wurde abgebrochen! Wird fertiggestellt...</value>
     <comment>Canceled WinClean! Finishing up...</comment>
@@ -144,6 +164,18 @@
   <data name="Select" xml:space="preserve">
     <value>Auswählen</value>
     <comment>Select</comment>
+  </data>
+  <data name="Selection.Language" xml:space="preserve">
+    <value>Please select your langauge:</value>
+    <comment>Please select your langauge:</comment>
+  </data>
+  <data name="Selection.Language.AnsEnglish" xml:space="preserve">
+    <value>English</value>
+    <comment>English</comment>
+  </data>
+  <data name="Selection.Language.AnsGerman" xml:space="preserve">
+    <value>Deutsch</value>
+    <comment>Deutsch</comment>
   </data>
   <data name="SelectionEmpty" xml:space="preserve">
     <value>Die Auswahl ist leer!</value>
