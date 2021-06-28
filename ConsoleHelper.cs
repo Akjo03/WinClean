@@ -2,12 +2,11 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Threading;
-using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace WinClean {
     public class ConsoleHelper {
-        // === Console Output Methods ===
+        // === Console Output ===
 
         public void Write(string text) {
             Console.WriteLine("[WinClean] " + text);
@@ -65,6 +64,22 @@ namespace WinClean {
                 Write(Strings.ExitingWithExitCode.Replace("{exitCode}", exitCode.ToString()));
             }
             Environment.Exit(exitCode);
+        }
+
+        // === Console Input ===
+
+        public struct SelectionOption {
+            private int number;
+            private string option;
+
+            public SelectionOption(int number, string option) {
+                this.number = number;
+                this.option = option;
+            }
+        }
+
+        public SelectionOption CreateSelection(string question, List<SelectionOption> options) {
+            return new SelectionOption();
         }
 
         // === Console Font ===
