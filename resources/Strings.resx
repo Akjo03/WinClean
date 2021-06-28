@@ -141,12 +141,28 @@
     <value>strings.FatalErrorOccured</value>
     <comment>A fatal error occurred...</comment>
   </data>
+  <data name="Select" xml:space="preserve">
+    <value>strings.Select</value>
+    <comment>Select</comment>
+  </data>
+  <data name="SelectionEmpty" xml:space="preserve">
+    <value>strings.SelectionEmpty</value>
+    <comment>Selection is empty!</comment>
+  </data>
+  <data name="SelectionNotInRange" xml:space="preserve">
+    <value>strings.SelectionNotInRange</value>
+    <comment>Selection is not in range!</comment>
+  </data>
+  <data name="SelectionNotNumerical" xml:space="preserve">
+    <value>strings.SelectionNotNumerical</value>
+    <comment>Selection is not a number!</comment>
+  </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>strings.WelcomeMessage</value>
     <comment>Welcome to WinClean!</comment>
   </data>
   <data name="WelcomeTitle" xml:space="preserve">
-    <value>strrings.WelcomeTitle</value>
+    <value>strings.WelcomeTitle</value>
     <comment>Welcome</comment>
   </data>
 </root>

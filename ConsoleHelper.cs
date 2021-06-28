@@ -3,6 +3,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace WinClean {
     public class ConsoleHelper {
@@ -76,10 +77,40 @@ namespace WinClean {
                 this.number = number;
                 this.option = option;
             }
+
+            public int GetNumber() {
+                return number;
+            }
+
+            public string GetOptionText() {
+                return option;
+            }
         }
 
         public SelectionOption CreateSelection(string question, List<SelectionOption> options) {
-            return new SelectionOption();
+            Write("", "");
+            Write(question);
+            foreach (SelectionOption option in options) {
+                Write("", "           " + option.GetNumber() + " - " + option.GetOptionText());
+            }
+            Console.Write(" [" + Strings.Select + " (" + options.Min(option => option.GetNumber()) + "-" + options.Max(option => option.GetNumber()) + ")] > "); string input = Console.ReadLine();
+            while (true) {
+                if (String.IsNullOrWhiteSpace(input)) {
+                    WriteError(Strings.SelectionEmpty);
+                } else {
+                    if (!int.TryParse(input, out int selectionNum)) {
+                        WriteError(Strings.SelectionNotNumerical);
+                    } else {
+                        if (selectionNum >= 1 && selectionNum <= 100) {
+                            Write("", "");
+                            return options.Find(option => option.GetNumber() == selectionNum);
+                        } else {
+                            WriteError(Strings.SelectionNotInRange);
+                        }
+                    }
+                }
+                Console.Write(" [" + Strings.Select + " (" + options.Min(option => option.GetNumber()) + "-" + options.Max(option => option.GetNumber()) + ")] > "); input = Console.ReadLine();
+            }
         }
 
         // === Console Font ===
