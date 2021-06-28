@@ -130,7 +130,7 @@
     <comment>Locale {locale} was not found!</comment>
   </data>
   <data name="ArgParse.PartNotFound" xml:space="preserve">
-    <value>Part "{part_name]" was not found!</value>
+    <value>Part "{part_name}" was not found!</value>
     <comment>Part "{part_name]" was not found!</comment>
   </data>
   <data name="ArgParse.PartNotNumerical" xml:space="preserve">
