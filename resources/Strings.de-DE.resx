@@ -141,6 +141,22 @@
     <value>Ein schwerwiegender Fehler ist aufgetreten...</value>
     <comment>A fatal error occurred...</comment>
   </data>
+  <data name="Select" xml:space="preserve">
+    <value>Auswählen</value>
+    <comment>Select</comment>
+  </data>
+  <data name="SelectionEmpty" xml:space="preserve">
+    <value>Die Auswahl ist leer!</value>
+    <comment>Selection is empty!</comment>
+  </data>
+  <data name="SelectionNotInRange" xml:space="preserve">
+    <value>Die Auswahl ist nicht innerhalb des Wertebereichs!</value>
+    <comment>Selection is not in range!</comment>
+  </data>
+  <data name="SelectionNotNumerical" xml:space="preserve">
+    <value>Die Auswahl ist keine Zahl!</value>
+    <comment>Selection is not a number!</comment>
+  </data>
   <data name="WelcomeMessage" xml:space="preserve">
     <value>Willkommen bei WinClean!</value>
     <comment>Welcome to WinClean!</comment>
