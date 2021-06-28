@@ -124,6 +124,33 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Selection.Language ähnelt.
+        /// </summary>
+        public static string Selection_Language {
+            get {
+                return ResourceManager.GetString("Selection.Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Selection.Language.AnsEnglish ähnelt.
+        /// </summary>
+        public static string Selection_Language_AnsEnglish {
+            get {
+                return ResourceManager.GetString("Selection.Language.AnsEnglish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Selection.Language.AnsGerman ähnelt.
+        /// </summary>
+        public static string Selection_Language_AnsGerman {
+            get {
+                return ResourceManager.GetString("Selection.Language.AnsGerman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.SelectionEmpty ähnelt.
         /// </summary>
         public static string SelectionEmpty {

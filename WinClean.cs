@@ -31,13 +31,38 @@ namespace WinClean {
 
         public void Start() {
             Console.Font("Consolas", 24);
-            Locale.SetLang("en-us");
             Console.Clear();
+
+            Part0_SelectLanguage();
+
             Console.Title(Strings.WelcomeTitle);
             Console.Write(Strings.WelcomeMessage);
             Console.Write(Strings.EarlyDevelopmentMessage);
             Thread.Sleep(5000);
             Console.Exit(0, false);
+        }
+
+        private void Part0_SelectLanguage() {
+            Locale.SetLang("en-us");
+            Console.Clear();
+            var languageSelection = Console.CreateSelection(Strings.Selection_Language, new List<ConsoleHelper.SelectionOption>() {
+                new ConsoleHelper.SelectionOption(1, Strings.Selection_Language_AnsEnglish),
+                new ConsoleHelper.SelectionOption(2, Strings.Selection_Language_AnsGerman)
+            });
+            switch (languageSelection.number) {
+                case 1:
+                    Locale.SetLang("en-us");
+                    break;
+
+                case 2:
+                    Locale.SetLang("de-de");
+                    break;
+
+                default:
+                    Locale.SetLang("en-us");
+                    break;
+            }
+            Console.Clear();
         }
     }
 }

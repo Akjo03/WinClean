@@ -145,6 +145,18 @@
     <value>strings.Select</value>
     <comment>Select</comment>
   </data>
+  <data name="Selection.Language" xml:space="preserve">
+    <value>strings.Selection.Language</value>
+    <comment>Please select your langauge:</comment>
+  </data>
+  <data name="Selection.Language.AnsEnglish" xml:space="preserve">
+    <value>strings.Selection.Language.AnsEnglish</value>
+    <comment>English</comment>
+  </data>
+  <data name="Selection.Language.AnsGerman" xml:space="preserve">
+    <value>strings.Selection.Language.AnsGerman</value>
+    <comment>Deutsch</comment>
+  </data>
   <data name="SelectionEmpty" xml:space="preserve">
     <value>strings.SelectionEmpty</value>
     <comment>Selection is empty!</comment>
