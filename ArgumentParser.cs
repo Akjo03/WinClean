@@ -6,9 +6,11 @@ namespace WinClean {
     public class ArgumentParser {
         
         private ConsoleHelper consoleRef;
+        private LocaleHelper localeRef;
 
-        public ArgumentParser(ConsoleHelper consoleRef) {
+        public ArgumentParser(ConsoleHelper consoleRef, LocaleHelper localeRef) {
             this.consoleRef = consoleRef;
+            this.localeRef = localeRef;
         }
 
         public (List<int>, string) Parse(string[] args) {
@@ -67,6 +69,11 @@ namespace WinClean {
                             consoleRef.Exit(-1, true);
                         }
                     } else if (arg == "-h" || arg == "-?") {
+                        // If locale already set through arguments set it
+                        if (localeResult != null) {
+                            localeRef.SetLang(localeResult);
+                        }
+
                         // Write the Help for WinClean arguments to the console and exit without clearing the console
                         consoleRef.Write(Strings.ArgParse_Help);
                         consoleRef.Exit(0, false, false);
