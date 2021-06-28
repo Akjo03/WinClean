@@ -18,7 +18,7 @@ namespace WinClean {
         private WinClean(string[] args) {
             Console = new ConsoleHelper();
             Locale = new LocaleHelper(Console);
-            Start();
+            Start(new List<int>() { 0 });
         }
 
         /// <summary>
@@ -29,11 +29,13 @@ namespace WinClean {
             new WinClean(args);
         }
 
-        public void Start() {
+        public void Start(List<int> parts) {
             Console.Font("Consolas", 24);
             Console.Clear();
 
-            Part0_SelectLanguage();
+            if (parts.Contains(0)) {
+                Part0_SelectLanguage();
+            }
 
             Console.Title(Strings.WelcomeTitle);
             Console.Write(Strings.WelcomeMessage);
