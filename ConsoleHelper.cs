@@ -79,6 +79,18 @@ namespace WinClean {
             }
         }
 
+        public void EnterToContinue() {
+            EnterToContinue(Strings.EnterToContinue);
+        }
+
+        public void EnterToContinue(string text) {
+            Write(text);
+            ConsoleKey key = Console.ReadKey().Key;
+            while (key != ConsoleKey.Enter) {
+                continue;
+            }
+        }
+
         public SelectionOption CreateSelection(string question, List<SelectionOption> options) {
             Write("", "");
             Write(question);
