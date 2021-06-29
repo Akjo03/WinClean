@@ -137,6 +137,10 @@
     <value>Part "{part_name}" is not a number!</value>
     <comment>Part " {part_name}" is not a number!</comment>
   </data>
+  <data name="ArgParse.SkippingLanguageSelection" xml:space="preserve">
+    <value>Part 0 for language selection will be skipped because locale has been given.</value>
+    <comment>Part 0 for language selection will be skipped because locale has been given.</comment>
+  </data>
   <data name="CancelEventMessage" xml:space="preserve">
     <value>Canceled WinClean! Finishing up...</value>
     <comment>Canceled WinClean! Finishing up...</comment>
