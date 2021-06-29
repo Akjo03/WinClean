@@ -37,7 +37,7 @@ namespace WinClean {
         /// <summary>
         /// Creates the main instance of WinClean. Should only be called once.
         /// This will instantiate all the helpers and set the default font, locale and parses all the command line arguments.
-        /// This will also check if WinClean is being ran on Windows 10
+        /// This will also check if WinClean is being ran on Windows 10.
         /// </summary>
         /// <param name="args">Command line arguments</param>
         private WinClean(string[] args) {
@@ -94,7 +94,7 @@ namespace WinClean {
         }
 
         /// <summary>
-        /// Starts WinClean with the parts that it should run and a locale
+        /// Starts WinClean with the parts that it should run and a locale.
         /// </summary>
         /// <param name="parts">A list of parts that should be run</param>
         /// <param name="locale">The locale that the WinClean app should run on. If this is null the user can choose the locale as long as Part 0 is ran.</param>
