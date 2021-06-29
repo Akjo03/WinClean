@@ -1,6 +1,7 @@
 ﻿using WinClean.resources;
 
 using System.Collections.Generic;
+using System.Threading;
 
 namespace WinClean {
     public class ArgumentParser {
@@ -53,6 +54,10 @@ namespace WinClean {
                             // If any error occured above exit
                             consoleRef.EnterToContinue(Strings.EnterToExit);
                             consoleRef.Exit(-1, false);
+                        }
+                        if (partsResult.Contains(0) && localeResult != null) {
+                            consoleRef.WriteWarn(Strings.ArgParse_SkippingLanguageSelection);
+                            Thread.Sleep(consoleRef.GetReadingTime(Strings.ArgParse_SkippingLanguageSelection));
                         }
                     } else if (arg.StartsWith("-locale:")) {
                         // If argument "locale" was given get it

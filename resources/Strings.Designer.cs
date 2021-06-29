@@ -106,6 +106,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.ArgParse.SkippingLanguageSelection ähnelt.
+        /// </summary>
+        public static string ArgParse_SkippingLanguageSelection {
+            get {
+                return ResourceManager.GetString("ArgParse.SkippingLanguageSelection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.CancelEventMessage ähnelt.
         /// </summary>
         public static string CancelEventMessage {
