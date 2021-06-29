@@ -109,7 +109,11 @@ namespace WinClean {
                 }
                 wordCount++;
             }
-            return Convert.ToInt32((float) wordCount / 200 * 60 * 1000);
+            if (wordCount < 3) {
+                return Convert.ToInt32(((((float) wordCount / 200 * 60) * 2) + 1) * 1000);
+            } else {
+                return Convert.ToInt32((float)wordCount / 200 * 60 * 1000);
+            }
         }
 
         public int GetReadingTime(List<string> texts) {

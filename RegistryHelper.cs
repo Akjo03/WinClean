@@ -20,6 +20,22 @@ namespace WinClean {
             }
         }
 
+        public string ReadAny(RegistryKey registryMain, string subkey, string name) {
+            using (RegistryKey key = registryMain.OpenSubKey(subkey)) {
+                if (key != null) {
+                    return key.GetValue(name).ToString();
+                } else {
+                    return null;
+                }
+            }
+        }
+
+        public bool ValueExists(string name) {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\WinClean")) {
+                return key.GetValue(name) != null;
+            }
+        }
+
         public void Delete(string name) {
             using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\WinClean")) {
                 if (key != null) {

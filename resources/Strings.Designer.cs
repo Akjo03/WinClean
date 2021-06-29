@@ -169,6 +169,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.NotWindows10 ähnelt.
+        /// </summary>
+        public static string NotWindows10 {
+            get {
+                return ResourceManager.GetString("NotWindows10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.Select ähnelt.
         /// </summary>
         public static string Select {
@@ -201,6 +210,33 @@ namespace WinClean.resources {
         public static string Selection_Language_AnsGerman {
             get {
                 return ResourceManager.GetString("Selection.Language.AnsGerman", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Selection.Language.CurrentLanguage ähnelt.
+        /// </summary>
+        public static string Selection_Language_CurrentLanguage {
+            get {
+                return ResourceManager.GetString("Selection.Language.CurrentLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Selection.Language.CurrentLanguage.Correct ähnelt.
+        /// </summary>
+        public static string Selection_Language_CurrentLanguage_Correct {
+            get {
+                return ResourceManager.GetString("Selection.Language.CurrentLanguage.Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Selection.Language.CurrentLanguage.Wrong ähnelt.
+        /// </summary>
+        public static string Selection_Language_CurrentLanguage_Wrong {
+            get {
+                return ResourceManager.GetString("Selection.Language.CurrentLanguage.Wrong", resourceCulture);
             }
         }
         

@@ -22,28 +22,48 @@ namespace WinClean {
 
         private RegistryHelper Registry;
 
+        private WinHelper Windows;
+
         private WinClean(string[] args) {
             // Create the console helper
             Console = new ConsoleHelper();
 
-            // Create the locale helper and set the font
-            Console.Font("Consolas", 24);
-            Locale = new LocaleHelper(Console);
-            Console.Clear();
-
             // Create the registry helper
             Registry = new RegistryHelper();
 
-            // Get command line arguments
-            ArgumentParser argumentParser = new ArgumentParser(Console, Locale);
-            (List<int> parts, string locale) = argumentParser.Parse(args);
+            // Create the windows (system) helper
+            Windows = new WinHelper(Registry);
 
-            //Check if we are on windows
-            if (!SystemHelper.IsWindows()) {
+            // Create the locale helper and set the font
+            Console.Font("Consolas", 24);
+            Locale = new LocaleHelper(Console);
+            if (Registry.ValueExists("locale")) {
+                Locale.SetLocale(Registry.Read("locale"));
+            } else {
+                if (availableLocale.Contains(Thread.CurrentThread.CurrentUICulture.Name.ToLower())) {
+                    Locale.SetLocale(Thread.CurrentThread.CurrentUICulture.Name.ToLower());
+                } else {
+                    Locale.SetLocale("en-us");
+                }
+            }
+            Console.Clear();
+
+            //Check if we are on windows 10
+            if (!Windows.IsWindows()) {
                 Console.WriteError(Strings.NotWindows);
                 Console.EnterToContinue(Strings.EnterToExit);
                 Console.Exit(-1, false);
+            } else {
+                if (!Windows.IsWindows10()) {
+                    Console.WriteError(Strings.NotWindows10);
+                    Console.EnterToContinue(Strings.EnterToExit);
+                    Console.Exit(-1, false);
+                }
             }
+
+            // Get and parse command line arguments
+            ArgumentParser argumentParser = new ArgumentParser(Console, Locale);
+            (List<int> parts, string locale) = argumentParser.Parse(args);
 
             // Start the WinClean program
             Start(parts, locale);
@@ -66,10 +86,12 @@ namespace WinClean {
             } else if (locale != null) {
                 Locale.SetLocale(locale);
             }
-            Registry.Write("locale", Locale.GetLocale());
+            // Save the language to the registry
+            if (Locale.GetLocale() != null) {
+                Registry.Write("locale", Locale.GetLocale());
+            }
 
-            // Check if we are ac
-
+            // Show Welcome message
             Console.Clear();
             Console.Title(Strings.WelcomeTitle);
             Console.Write(Strings.WelcomeMessage);
@@ -80,6 +102,13 @@ namespace WinClean {
 
         private void Part0_SelectLanguage() {
             Console.Clear();
+            var currentLanguageConfirmation = Console.CreateSelection(Strings.Selection_Language_CurrentLanguage, new List<ConsoleHelper.SelectionOption>() {
+                new ConsoleHelper.SelectionOption(1, Strings.Selection_Language_CurrentLanguage_Correct),
+                new ConsoleHelper.SelectionOption(2, Strings.Selection_Language_CurrentLanguage_Wrong)
+            });
+            if (currentLanguageConfirmation.Number == 1) {
+                return;
+            }
             var languageSelection = Console.CreateSelection(Strings.Selection_Language, new List<ConsoleHelper.SelectionOption>() {
                 new ConsoleHelper.SelectionOption(1, Strings.Selection_Language_AnsEnglish),
                 new ConsoleHelper.SelectionOption(2, Strings.Selection_Language_AnsGerman)

@@ -165,6 +165,10 @@
     <value>strings.NotWindows</value>
     <comment>WinClean doesn't seem to be running on Windows! WinClean only works on Windows 10.</comment>
   </data>
+  <data name="NotWindows10" xml:space="preserve">
+    <value>strings.NotWindows10</value>
+    <comment>WinClean doesn't seem to be running on Windows 10! WinClean only works on Windows 10.</comment>
+  </data>
   <data name="Select" xml:space="preserve">
     <value>strings.Select</value>
     <comment>Select</comment>
@@ -180,6 +184,18 @@
   <data name="Selection.Language.AnsGerman" xml:space="preserve">
     <value>strings.Selection.Language.AnsGerman</value>
     <comment>Deutsch</comment>
+  </data>
+  <data name="Selection.Language.CurrentLanguage" xml:space="preserve">
+    <value>strings.Selection.Language.CurrentLanguage</value>
+    <comment>We have detected that your language is set to English. Is that correct?</comment>
+  </data>
+  <data name="Selection.Language.CurrentLanguage.Correct" xml:space="preserve">
+    <value>strings.Selection.Language.CurrentLanguage.Correct</value>
+    <comment>Yes, that is correct!</comment>
+  </data>
+  <data name="Selection.Language.CurrentLanguage.Wrong" xml:space="preserve">
+    <value>strings.Selection.Language.CurrentLanguage.Wrong</value>
+    <comment>No, I want to change the language!</comment>
   </data>
   <data name="SelectionEmpty" xml:space="preserve">
     <value>strings.SelectionEmpty</value>
