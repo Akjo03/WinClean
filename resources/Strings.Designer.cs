@@ -160,6 +160,15 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.LanguageSelectionTitle ähnelt.
+        /// </summary>
+        public static string LanguageSelectionTitle {
+            get {
+                return ResourceManager.GetString("LanguageSelectionTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.NotWindows ähnelt.
         /// </summary>
         public static string NotWindows {

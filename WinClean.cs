@@ -102,6 +102,7 @@ namespace WinClean {
 
         private void Part0_SelectLanguage() {
             Console.Clear();
+            Console.Title(Strings.LanguageSelectionTitle);
             var currentLanguageConfirmation = Console.CreateSelection(Strings.Selection_Language_CurrentLanguage, new List<ConsoleHelper.SelectionOption>() {
                 new ConsoleHelper.SelectionOption(1, Strings.Selection_Language_CurrentLanguage_Correct),
                 new ConsoleHelper.SelectionOption(2, Strings.Selection_Language_CurrentLanguage_Wrong)
