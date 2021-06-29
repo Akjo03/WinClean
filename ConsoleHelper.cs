@@ -15,65 +15,106 @@ namespace WinClean {
     public class ConsoleHelper {
         // === Console Output ===
 
+        /// <summary>
+        /// Writes to the Console with the name "WinClean"
+        /// </summary>
+        /// <param name="text">The text to write</param>
         public void Write(string text) {
             Console.WriteLine(" [WinClean] " + text);
         }
 
+        /// <summary>
+        /// Writes to the Console with the specified name
+        /// </summary>
+        /// <param name="name">The name to write as</param>
+        /// <param name="text">The text to write</param>
         public void Write(string name, string text) {
             if (name != null) {
                 if (name.Length <= 0) {
                     Console.WriteLine(" " + text);
-                }
-                else {
+                } else {
                     Console.WriteLine(" [" + name + "] " + text);
                 }
-            }
-            else {
+            } else {
                 Write(text);
             }
         }
 
+        /// <summary>
+        /// Writes to the Console with the name "WinClean" in the specified color
+        /// </summary>
+        /// <param name="text">The text to write</param>
+        /// <param name="color">The color to write in</param>
         public void Write(string text, ConsoleColor color) {
             Console.ForegroundColor = color;
             Write(text);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        /// <summary>
+        /// Writes to the Console with the specified name and in the specified color
+        /// </summary>
+        /// <param name="name">The name to write as</param>
+        /// <param name="text">The text to write</param>
+        /// <param name="color">The color to write in</param>
         public void Write(string name, string text, ConsoleColor color) {
             Console.ForegroundColor = color;
             Write(name, text);
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        /// <summary>
+        /// Writes to the Console in the color red with the name "ERROR" 
+        /// </summary>
+        /// <param name="text">The text to write</param>
         public void WriteError(string text) {
             Write("ERROR", text, ConsoleColor.Red);
         }
 
+        /// <summary>
+        /// Writes to the Console in ogre with the name "WARN"
+        /// </summary>
+        /// <param name="text">The text to write</param>
         public void WriteWarn(string text) {
             Write("WARN", text, ConsoleColor.DarkYellow);
         }
 
+        /// <summary>
+        /// Exits WinClean with a FATAL error message with the specified reason.
+        /// </summary>
+        /// <param name="exitCode">The exit code</param>
+        /// <param name="reason">The reason for the fatal error</param>
         public void FatalExit(int exitCode, string reason) {
-            Write("FATAL", Strings.FatalErrorOccured + " | Reason: " + reason);
+            Write("FATAL", Strings.FatalErrorOccured + " | Reason: " + reason, ConsoleColor.Red);
             Exit(exitCode, true);
         }
 
+        /// <summary>
+        /// Changes the title of the Window
+        /// </summary>
+        /// <example>WinClean v0.0.0 | Example Title</example>
+        /// <param name="title"></param>
         public void Title(string title) {
             Console.Title = "WinClean " + WinClean.Version + " | " + title;
         }
 
+        /// <summary>
+        /// Clears the console
+        /// </summary>
         public void Clear() {
             Console.Clear();
         }
 
-        public void Exit(int exitCode, bool message) {
-            Exit(exitCode, message, true);
-        }
-
-        public void Exit(int exitCode, bool message, bool clearOnExit) {
+        /// <summary>
+        /// Exits WinClean with the specified exit code.
+        /// </summary>
+        /// <param name="exitCode">The exit code</param>
+        /// <param name="message">If a message should be displayed</param>
+        /// <param name="clearOnExit">If the console should be cleared on exit</param>
+        public void Exit(int exitCode, bool message = false, bool clearOnExit = true) {
             if (message) {
                 Write(Strings.ExitingWithExitCode.Replace("{exitCode}", exitCode.ToString()));
-                Thread.Sleep(2000);
+                Thread.Sleep(GetReadingTime(Strings.ExitingWithExitCode.Replace("{exitCode}", exitCode.ToString())));
             }
             if (clearOnExit) {
                 Console.Clear();
@@ -83,8 +124,18 @@ namespace WinClean {
 
         // === Console Input ===
 
+        /// <summary>
+        /// An option for a selection
+        /// </summary>
         public struct SelectionOption {
+            /// <summary>
+            /// The associated number with the option
+            /// </summary>
             public int Number { get; }
+
+            /// <summary>
+            /// The associated text with the option
+            /// </summary>
             public string OptionText { get; }
 
             public SelectionOption(int number, string optionText) {
@@ -93,18 +144,30 @@ namespace WinClean {
             }
         }
 
+        /// <summary>
+        /// Waits for enter with a default message
+        /// </summary>
         public void EnterToContinue() {
             EnterToContinue(Strings.EnterToContinue);
         }
 
-        public void EnterToContinue(string text) {
-            Write(text);
+        /// <summary>
+        /// Waits for enter with a specified message
+        /// </summary>
+        /// <param name="message">The message to write</param>
+        public void EnterToContinue(string message) {
+            Write(message);
             ConsoleKey key = Console.ReadKey().Key;
             while (key != ConsoleKey.Enter) {
                 continue;
             }
         }
 
+        /// <summary>
+        /// Gets the reading time for a specified text
+        /// </summary>
+        /// <param name="text">The text to get the reading time from</param>
+        /// <returns>The reading time in milliseconds</returns>
         public int GetReadingTime(string text) {
             string[] words = text.Split(" ");
             int wordCount = 0;
@@ -121,6 +184,11 @@ namespace WinClean {
             }
         }
 
+        /// <summary>
+        /// Gets the reading time for multiple texts
+        /// </summary>
+        /// <param name="texts">The list ôf texts to get the reading time from</param>
+        /// <returns>The reading time in milliseconds</returns>
         public int GetReadingTime(List<string> texts) {
             int readingTime = 0;
             foreach (string text in texts) {
@@ -129,6 +197,12 @@ namespace WinClean {
             return readingTime;
         }
 
+        /// <summary>
+        /// Cretes a new selection for the user with the specified question and options
+        /// </summary>
+        /// <param name="question">The question the user should answer</param>
+        /// <param name="options">The options the user has</param>
+        /// <returns>The selected option</returns>
         public SelectionOption CreateSelection(string question, List<SelectionOption> options) {
             Write("", "");
             Write(question);
@@ -157,6 +231,13 @@ namespace WinClean {
 
         // === Console Run ===
 
+        /// <summary>
+        /// Runs a command on cmd.exe (without showing any window)
+        /// </summary>
+        /// <param name="command">The command to run</param>
+        /// <param name="admin">If the command should be runned as an admin</param>
+        /// <param name="showOut">If the output of the command should be shown</param>
+        /// <returns>The exit code of the command line</returns>
         public int RunCommand(string command, bool admin = false, bool showOut = false) {
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
@@ -181,6 +262,16 @@ namespace WinClean {
             return cmd.ExitCode;
         }
 
+        /// <summary>
+        /// Runs a command on cmd.exe (without showing any window) and searches the output for strings to check.
+        /// </summary>
+        /// <param name="command">The command to run</param>
+        /// <param name="checks">A list of strings to check the output with</param>
+        /// <param name="admin">If the command should be runned as an admin</param>
+        /// <param name="showOut">If the output of the command should be shown</param>
+        /// <returns>
+        /// The exit code of the command line and a list of all the checks that have been found in the output.
+        /// </returns>
         public (int, List<string>) RunCommandWithChecks(string command, List<string> checks, bool admin = false, bool showOut = false) {
             Process cmd = new Process();
             cmd.StartInfo.FileName = "cmd.exe";
@@ -217,6 +308,13 @@ namespace WinClean {
             return (cmd.ExitCode, hits);
         }
 
+        /// <summary>
+        /// Runs a command on powershell.exe (without showing any window)
+        /// </summary>
+        /// <param name="command">The command to run</param>
+        /// <param name="admin">If the command should be runned as an admin</param>
+        /// <param name="showOut">If the output of the command should be shown</param>
+        /// <returns>The exit code of the command line</returns>
         public int RunCommandInPowerShell(string command, bool admin = false, bool showOut = false) {
             Process ps = new Process();
             ps.StartInfo.FileName = "powershell.exe";
@@ -241,6 +339,16 @@ namespace WinClean {
             return ps.ExitCode;
         }
 
+        /// <summary>
+        /// Runs a command on powershell.exe (without showing any window) and searches the output for strings to check.
+        /// </summary>
+        /// <param name="command">The command to run</param>
+        /// <param name="checks">A list of strings to check the output with</param>
+        /// <param name="admin">If the command should be runned as an admin</param>
+        /// <param name="showOut">If the output of the command should be shown</param>
+        /// <returns>
+        /// The exit code of the command line and a list of all the checks that have been found in the output.
+        /// </returns>
         public (int, List<string>) RunCommandInPowerShellWithChecks(string command, List<string> checks, bool admin = false, bool showOut = false) {
             Process ps = new Process();
             ps.StartInfo.FileName = "powershell.exe";
@@ -308,6 +416,11 @@ namespace WinClean {
             public string FontName;
         }
 
+        /// <summary>
+        /// Changes the font of the console
+        /// </summary>
+        /// <param name="font">The font to change to</param>
+        /// <param name="fontSize">The size of the font. If 0 the previous font size will stay</param>
         public FontInfo[] Font(string font, short fontSize = 0) {
             Write("Set Current Font: " + font);
 
@@ -340,21 +453,6 @@ namespace WinClean {
                 WriteError(new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error()).Message);
                 return null;
             }
-        }
-
-        // === Console Window Methods ===
-        const int SWP_NOSIZE = 0x0001;
-
-        [DllImport("kernel32.dll", ExactSpelling = true)]
-        private static extern IntPtr GetConsoleWindow();
-
-        private static IntPtr ConsoleWindow { get; } = GetConsoleWindow();
-
-        [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
-        public static extern IntPtr SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int x, int Y, int cx, int cy, int wFlags);
-
-        public void WindowPosition(int x, int y) {
-            SetWindowPos(ConsoleWindow, 0, x, y, 0, 0, SWP_NOSIZE);
         }
     }
 }
