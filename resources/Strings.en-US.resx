@@ -161,6 +161,10 @@
     <value>A fatal error occurred...</value>
     <comment>A fatal error occurred...</comment>
   </data>
+  <data name="LanguageSelectionTitle" xml:space="preserve">
+    <value>Language Selection</value>
+    <comment>Select Language</comment>
+  </data>
   <data name="NotWindows" xml:space="preserve">
     <value>WinClean doesn't seem to be running on Windows! WinClean only works on Windows 10.</value>
     <comment>WinClean doesn't seem to be running on Windows! WinClean only works on Windows 10.</comment>
