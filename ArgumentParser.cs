@@ -52,7 +52,7 @@ namespace WinClean {
                         if (errorOnArgParse) {
                             // If any error occured above exit
                             consoleRef.EnterToContinue(Strings.EnterToExit);
-                            consoleRef.Exit(-1, true);
+                            consoleRef.Exit(-1, false);
                         }
                     } else if (arg.StartsWith("-locale:")) {
                         // If argument "locale" was given get it
@@ -66,7 +66,7 @@ namespace WinClean {
                             // Given locale is not available
                             consoleRef.WriteError(Strings.ArgParse_LocaleNotFound.Replace("{locale}", localeInput));
                             consoleRef.EnterToContinue(Strings.EnterToExit);
-                            consoleRef.Exit(-1, true);
+                            consoleRef.Exit(-1, false);
                         }
                     } else if (arg == "-h" || arg == "-?") {
                         // If locale already set through arguments set it
@@ -82,7 +82,7 @@ namespace WinClean {
                         // If argument is invalid print an error
                         consoleRef.WriteError(Strings.ArgParse_Error);
                         consoleRef.EnterToContinue(Strings.EnterToExit);
-                        consoleRef.Exit(-1, true);
+                        consoleRef.Exit(-1, false);
                     }
                 }
                 return (partsResult, localeResult);
