@@ -162,8 +162,12 @@
     <comment>A fatal error occurred...</comment>
   </data>
   <data name="NotWindows" xml:space="preserve">
-    <value>WinClean scheint gerade nicht unter Windows zu laufen! WinClean funktioniert nur auf Windows 10</value>
+    <value>WinClean scheint gerade nicht unter Windows zu laufen! WinClean funktioniert nur auf Windows 10.</value>
     <comment>WinClean doesn't seem to be running on Windows! WinClean only works on Windows 10.</comment>
+  </data>
+  <data name="NotWindows10" xml:space="preserve">
+    <value>WinClean scheint gerade nicht unter Windows 10 zu laufen! WinClean funktioniert nur auf Windows 10.</value>
+    <comment>WinClean doesn't seem to be running on Windows 10! WinClean only works on Windows 10.</comment>
   </data>
   <data name="Select" xml:space="preserve">
     <value>Auswählen</value>
@@ -180,6 +184,18 @@
   <data name="Selection.Language.AnsGerman" xml:space="preserve">
     <value>Deutsch</value>
     <comment>Deutsch</comment>
+  </data>
+  <data name="Selection.Language.CurrentLanguage" xml:space="preserve">
+    <value>Wir haben festgestellt, dass Ihre Sprache auf Deutsch eingestellt ist. Ist das korrekt?</value>
+    <comment>We have detected that your language is set to English. Is that correct?</comment>
+  </data>
+  <data name="Selection.Language.CurrentLanguage.Correct" xml:space="preserve">
+    <value>Ja, das ist korrekt.</value>
+    <comment>Yes, that is correct!</comment>
+  </data>
+  <data name="Selection.Language.CurrentLanguage.Wrong" xml:space="preserve">
+    <value>Nein, ich möchte die Sprache ändern.</value>
+    <comment>No, I want to change the language!</comment>
   </data>
   <data name="SelectionEmpty" xml:space="preserve">
     <value>Die Auswahl ist leer!</value>
