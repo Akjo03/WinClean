@@ -5,6 +5,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 
 namespace WinClean {
     public class ConsoleHelper {
@@ -148,6 +149,128 @@ namespace WinClean {
                 }
                 Console.Write(" " + Strings.Select + " (" + options.Min(option => option.Number) + "-" + options.Max(option => option.Number) + ") > "); input = Console.ReadLine();
             }
+        }
+
+        // === Console Run ===
+
+        public int RunCommand(string command, bool admin = false, bool showOut = false) {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            if (admin) {
+                cmd.StartInfo.Verb = "runas";
+            }
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine(command);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            if (!cmd.WaitForExit(10000)) {
+                cmd.Kill();
+            }
+            if (showOut) {
+                Write("Console", cmd.StandardOutput.ReadToEnd());
+            }
+            return cmd.ExitCode;
+        }
+
+        public (int, List<string>) RunCommandWithChecks(string command, List<string> checks, bool admin = false, bool showOut = false) {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            if (admin) {
+                cmd.StartInfo.Verb = "runas";
+            }
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine(command);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            if (!cmd.WaitForExit(10000)) {
+                cmd.Kill();
+            }
+
+            string output = cmd.StandardOutput.ReadToEnd();
+
+            if (showOut) {
+                Write("Console", output);
+            }
+
+            List<string> hits = new List<string>();
+
+            foreach (string check in checks) {
+                if (output.Contains(check)) {
+                    hits.Add(check);
+                }
+            }
+
+            return (cmd.ExitCode, hits);
+        }
+
+        public int RunCommandInPowerShell(string command, bool admin = false, bool showOut = false) {
+            Process ps = new Process();
+            ps.StartInfo.FileName = "powershell.exe";
+            ps.StartInfo.RedirectStandardInput = true;
+            ps.StartInfo.RedirectStandardOutput = true;
+            ps.StartInfo.CreateNoWindow = true;
+            ps.StartInfo.UseShellExecute = false;
+            if (admin) {
+                ps.StartInfo.Verb = "runas";
+            }
+            ps.Start();
+
+            ps.StandardInput.WriteLine(command);
+            ps.StandardInput.Flush();
+            ps.StandardInput.Close();
+            if (!ps.WaitForExit(10000)) {
+                ps.Kill();
+            }
+            if (showOut) {
+                Write("Console", ps.StandardOutput.ReadToEnd());
+            }
+            return ps.ExitCode;
+        }
+
+        public (int, List<string>) RunCommandInPowerShellWithChecks(string command, List<string> checks, bool admin = false, bool showOut = false) {
+            Process ps = new Process();
+            ps.StartInfo.FileName = "powershell.exe";
+            ps.StartInfo.RedirectStandardInput = true;
+            ps.StartInfo.RedirectStandardOutput = true;
+            ps.StartInfo.CreateNoWindow = true;
+            ps.StartInfo.UseShellExecute = false;
+            if (admin) {
+                ps.StartInfo.Verb = "runas";
+            }
+            ps.Start();
+
+            ps.StandardInput.WriteLine(command);
+            ps.StandardInput.Flush();
+            ps.StandardInput.Close();
+            if (!ps.WaitForExit(10000)) {
+                ps.Kill();
+            }
+
+            string output = ps.StandardOutput.ReadToEnd();
+
+            if (showOut) {
+                Write("Console", output);
+            }
+
+            List<string> hits = new List<string>();
+
+            foreach (string check in checks) {
+                if (output.Contains(check)) {
+                    hits.Add(check);
+                }
+            }
+
+            return (ps.ExitCode, hits);
         }
 
         // === Console Font ===
