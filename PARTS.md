@@ -8,7 +8,7 @@ Some of the parts might be skipped automatically depending on your windows insta
 | Part # | Part Name | Description |
 | - | - | - |
 | 0 | Language Selection | Allows the user to select a language. |
-| 1 | Activating Windows | Will activate windows for the user if he has an activation key and windows isn't already activated. |
+| 1 | Activating Windows | Will activate windows for the user if he has an activation key and if windows isn't already activated. |
 | 2 | Installing Windows Updates | Will install windows updates for the user including optional ones |
 | 3 | Configuring Windows Settings | Will configure all important Windows settings to the likings of the user |
 | 4 | Configuring Security Settings | Will configure all important Security settings including Windows Defender settings |
