@@ -11,9 +11,19 @@ namespace WinClean {
     /// For Version: v0.0.0
     /// </summary>
     public class WinClean {
+        /// <summary>
+        /// Version of WinClean
+        /// </summary>
         public static string Version { get; } = "v0.0.0";
 
+        /// <summary>
+        /// List of parts that are availble in this version of WinClean
+        /// </summary>
         public static List<int> availableParts = new List<int>() { 0 };
+
+        /// <summary>
+        /// List of available locales (languages) in this version of WinClean
+        /// </summary>
         public static List<string> availableLocale = new List<string>() { "en-us", "de-de" };
 
         private ConsoleHelper Console;
@@ -24,6 +34,12 @@ namespace WinClean {
 
         private WinHelper Windows;
 
+        /// <summary>
+        /// Creates the main instance of WinClean. Should only be called once.
+        /// This will instantiate all the helpers and set the default font, locale and parses all the command line arguments.
+        /// This will also check if WinClean is being ran on Windows 10
+        /// </summary>
+        /// <param name="args">Command line arguments</param>
         private WinClean(string[] args) {
             // Create the console helper
             Console = new ConsoleHelper();
@@ -77,6 +93,11 @@ namespace WinClean {
             new WinClean(args);
         }
 
+        /// <summary>
+        /// Starts WinClean with the parts that it should run and a locale
+        /// </summary>
+        /// <param name="parts">A list of parts that should be run</param>
+        /// <param name="locale">The locale that the WinClean app should run on. If this is null the user can choose the locale as long as Part 0 is ran.</param>
         public void Start(List<int> parts, string locale) {
             Console.Clear();
 
@@ -100,6 +121,9 @@ namespace WinClean {
             Console.Exit(0, false);
         }
 
+        /// <summary>
+        /// Runs part 0. This will give the user the chance of selecting a new language.
+        /// </summary>
         private void Part0_SelectLanguage() {
             Console.Clear();
             Console.Title(Strings.LanguageSelectionTitle);

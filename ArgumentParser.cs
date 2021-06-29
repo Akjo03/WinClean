@@ -4,16 +4,27 @@ using System.Collections.Generic;
 using System.Threading;
 
 namespace WinClean {
+    /// <summary>
+    /// This class is only used for parsing command line arguments
+    /// </summary>
     public class ArgumentParser {
         
         private ConsoleHelper consoleRef;
         private LocaleHelper localeRef;
+
 
         public ArgumentParser(ConsoleHelper consoleRef, LocaleHelper localeRef) {
             this.consoleRef = consoleRef;
             this.localeRef = localeRef;
         }
 
+        /// <summary>
+        /// Parses the given command line arguments
+        /// </summary>
+        /// <param name="args">The arguments that should be parsed</param>
+        /// <returns>
+        /// A list of parts and the locale that WinClean should be ran on.
+        /// </returns>
         public (List<int>, string) Parse(string[] args) {
             if (args.Length <= 0) {
                 // If no arguments given run all parts and start with no locale

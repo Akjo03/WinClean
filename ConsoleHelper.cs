@@ -8,6 +8,10 @@ using System.Linq;
 using System.Diagnostics;
 
 namespace WinClean {
+    /// <summary>
+    /// The ConsoleHelper class is used for many things. Mainly for reading and writing to console but also to run commands on a command line intepreter (like cmd.exe). Also has some other functions. 
+    /// Use this class instead of the System.Console class as much as possible.
+    /// </summary>
     public class ConsoleHelper {
         // === Console Output ===
 
