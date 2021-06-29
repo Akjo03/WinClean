@@ -31,7 +31,7 @@ namespace WinClean {
         }
 
         public bool ValueExists(string name) {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\WinClean")) {
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\WinClean")) {
                 return key.GetValue(name) != null;
             }
         }
