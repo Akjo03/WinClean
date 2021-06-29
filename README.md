@@ -28,6 +28,8 @@ You can install WinClean by going on to the [Releases page](https://github.com/A
 
 If you want to learn more about WinClean you can check out our [wiki](https://github.com/Akjo03/WinClean/wiki) or our [website](https://akjo03.github.io/WinClean/).
 
+**NOTE:** Both the wiki and website are very unfinished and will be fleshed out soon. They will also replace all the markdown files here except obviously for README.md
+
 ------
 
 ## Contributing
