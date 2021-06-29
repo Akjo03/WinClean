@@ -41,12 +41,12 @@ namespace WinClean {
                                 } else {
                                     // Given part not in the list of available parts.
                                     errorOnArgParse = true;
-                                    consoleRef.WriteError(Strings.ArgParse_PartNotFound.Replace("{part_name}", partInput));
+                                    consoleRef.WriteError(Strings.ArgParse_PartNotFound.Replace("{part_name}", partInput.Trim()));
                                 }
                             } else {
                                 // Given part is not numerical
                                 errorOnArgParse = true;
-                                consoleRef.WriteError(Strings.ArgParse_PartNotNumerical.Replace("{part_name}", partInput));
+                                consoleRef.WriteError(Strings.ArgParse_PartNotNumerical.Replace("{part_name}", partInput.Trim()));
                             }
                         }
                         if (errorOnArgParse) {
