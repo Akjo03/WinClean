@@ -134,7 +134,7 @@
     <comment>Part "{part_name]" was not found!</comment>
   </data>
   <data name="ArgParse.PartNotNumerical" xml:space="preserve">
-    <value>Part " {part_name}" is not a number!</value>
+    <value>Part "{part_name}" is not a number!</value>
     <comment>Part " {part_name}" is not a number!</comment>
   </data>
   <data name="CancelEventMessage" xml:space="preserve">
