@@ -1,8 +1,6 @@
 ﻿using System.Globalization;
 using System.Threading;
 
-using static WinClean.ConsoleHelper;
-
 namespace WinClean {
     public class LocaleHelper {
         private ConsoleHelper ConsoleRef { get; }

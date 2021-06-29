@@ -1,6 +1,4 @@
-﻿using WinClean.resources;
-
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 
 namespace WinClean {
     public class RegistryHelper {
