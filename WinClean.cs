@@ -8,13 +8,13 @@ namespace WinClean {
     /// Main class for WinClean
     /// 
     /// Author: Akjo03
-    /// For Version: v0.0.0
+    /// For Version: v0.0.1
     /// </summary>
     public class WinClean {
         /// <summary>
         /// Version of WinClean
         /// </summary>
-        public static string Version { get; } = "v0.0.0";
+        public static string Version { get; } = "v0.0.1";
 
         /// <summary>
         /// List of parts that are availble in this version of WinClean
