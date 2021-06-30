@@ -147,7 +147,7 @@
   </data>
   <data name="EarlyDevelopmentMessage" xml:space="preserve">
     <value>WinClean befindet sich noch in der frühen Entwicklung! Diese Version ist noch nicht fertig... bitte warten Sie auf Updates!</value>
-    <comment>WinClean is still in early development! This version isn't finished yet... please wait for updates!</comment>
+    <comment>Please note that WinClean is still in early development!</comment>
   </data>
   <data name="EnterToContinue" xml:space="preserve">
     <value>Drücken Sie die Eingabetaste, um fortzufahren...</value>
