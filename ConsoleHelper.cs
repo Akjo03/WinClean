@@ -204,7 +204,6 @@ namespace WinClean {
         /// <param name="options">The options the user has</param>
         /// <returns>The selected option</returns>
         public SelectionOption CreateSelection(string question, List<SelectionOption> options) {
-            Write("", "");
             Write(question);
             foreach (SelectionOption option in options) {
                 Write("", "           " + option.Number + " - " + option.OptionText);

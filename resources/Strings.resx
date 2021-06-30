@@ -147,7 +147,7 @@
   </data>
   <data name="EarlyDevelopmentMessage" xml:space="preserve">
     <value>strings.EarlyDevelopmentMessage</value>
-    <comment>WinClean is still in early development! This version isn't finished yet... please wait for updates!</comment>
+    <comment>Please note that WinClean is still in early development!</comment>
   </data>
   <data name="EnterToContinue" xml:space="preserve">
     <value>strings.EnterToContinue</value>

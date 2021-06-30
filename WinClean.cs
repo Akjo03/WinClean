@@ -118,6 +118,12 @@ namespace WinClean {
             Console.Write(Strings.WelcomeMessage);
             Console.Write(Strings.EarlyDevelopmentMessage);
             Thread.Sleep(Console.GetReadingTime(new List<string>() { Strings.WelcomeMessage, Strings.EarlyDevelopmentMessage }));
+            Console.Clear();
+
+            if (parts.Contains(1)) {
+                Part1_ActivatingWindows();
+            }
+            
             Console.Exit(0, false);
         }
 
@@ -127,6 +133,7 @@ namespace WinClean {
         private void Part0_SelectLanguage() {
             Console.Clear();
             Console.Title(Strings.LanguageSelectionTitle);
+
             var currentLanguageConfirmation = Console.CreateSelection(Strings.Selection_Language_CurrentLanguage, new List<ConsoleHelper.SelectionOption>() {
                 new ConsoleHelper.SelectionOption(1, Strings.Selection_Language_CurrentLanguage_Correct),
                 new ConsoleHelper.SelectionOption(2, Strings.Selection_Language_CurrentLanguage_Wrong)
@@ -151,6 +158,12 @@ namespace WinClean {
                     Locale.SetLocale("en-us");
                     break;
             }
+            Console.Clear();
+        }
+
+        private void Part1_ActivatingWindows() {
+            Console.Clear();
+
             Console.Clear();
         }
     }
