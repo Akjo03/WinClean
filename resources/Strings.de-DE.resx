@@ -146,7 +146,7 @@
     <comment>Canceled WinClean! Finishing up...</comment>
   </data>
   <data name="EarlyDevelopmentMessage" xml:space="preserve">
-    <value>WinClean befindet sich noch in der frühen Entwicklung! Diese Version ist noch nicht fertig... bitte warten Sie auf Updates!</value>
+    <value>Bitte beachten Sie, dass sich WinClean noch in einer frühen Entwicklungsphase befindet!</value>
     <comment>Please note that WinClean is still in early development!</comment>
   </data>
   <data name="EnterToContinue" xml:space="preserve">
