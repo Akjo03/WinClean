@@ -1,7 +1,7 @@
 ﻿# Parts
 
-WinClean is sectioned into parts. Every part should be run in order, to ensure the best results. The user can choose which parts he wants to start altough on a fresh installation of windows all of these should be runned.
-Some of the parts might be skipped automatically depending on your windows installation. Also all parts enforce user interaction to ensure that the user will get “their installation” not “WinClean’s installation” and nothing will be done against the users will.
+WinClean is sectioned into parts. Every part should be run in order, to ensure the best results. The user can choose which parts he wants to start, although on a fresh installation of Windows, all of these should run.
+Some of the parts might be skipped automatically depending on the state of your windows installation. WinClean ensures that the user will get “their installation” not “WinClean’s installation” and nothing will be done, if the user doesn't want to, even if every part is ran.
 
 
 ## Planned for the initial release
