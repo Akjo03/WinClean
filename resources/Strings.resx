@@ -177,6 +177,198 @@
     <value>strings.NotWindows10</value>
     <comment>WinClean doesn't seem to be running on Windows 10! WinClean only works on Windows 10.</comment>
   </data>
+  <data name="Part1.ActivationCheck.Error" xml:space="preserve">
+    <value>strings.Part1.ActivationCheck.Error</value>
+    <comment>The check if windows is activated has failed!</comment>
+  </data>
+  <data name="Part1.ActivationKey.Request" xml:space="preserve">
+    <value>strings.Part1.ActivationKey.Request</value>
+    <comment>Great! Please enter your activation key below:</comment>
+  </data>
+  <data name="Part1.ActivationKey.Request.Name" xml:space="preserve">
+    <value>strings.Part1.ActivationKey.Request.Name</value>
+    <comment>Activation Key</comment>
+  </data>
+  <data name="Part1.ActivationKeyInstallation.Error" xml:space="preserve">
+    <value>strings.Part1.ActivationKeyInstallation.Error</value>
+    <comment>...</comment>
+  </data>
+  <data name="Part1.ActivationKeyInstallation.Installing" xml:space="preserve">
+    <value>strings.Part1.ActivationKeyInstallation.Installing</value>
+    <comment>Your activation key is being installed...</comment>
+  </data>
+  <data name="Part1.ActivationKeyInstallation.Success" xml:space="preserve">
+    <value>strings.Part1.ActivationKeyInstalled</value>
+    <comment>Your activation key has been succesfully installed.</comment>
+  </data>
+  <data name="Part1.AlreadyActivated" xml:space="preserve">
+    <value>strings.Part1.AlreadyActivated</value>
+    <comment>Your windows installation is already activated. Skipping windows activation...</comment>
+  </data>
+  <data name="Part1.HasActivationKey.Selection" xml:space="preserve">
+    <value>strings.Part1.HasActivationKey.Selection</value>
+    <comment>Do you have an activation key?</comment>
+  </data>
+  <data name="Part1.HasActivationKey.Selection.Error" xml:space="preserve">
+    <value>strings.Part1.HasActivationKey.Selection.Error</value>
+    <comment>Error on selection "HasActivationKey"...</comment>
+  </data>
+  <data name="Part1.HasActivationKey.Selection.No" xml:space="preserve">
+    <value>strings.Part1.HasActivationKey.Selection.No</value>
+    <comment>No, I want to buy one.</comment>
+  </data>
+  <data name="Part1.HasActivationKey.Selection.Skip" xml:space="preserve">
+    <value>strings.Part1.HasActivationKey.Selection.Skip</value>
+    <comment>No, I want to skip the activation process.</comment>
+  </data>
+  <data name="Part1.HasActivationKey.Selection.Yes" xml:space="preserve">
+    <value>strings.Part1.HasActivationKey.Selection.Yes</value>
+    <comment>Yes, I do.</comment>
+  </data>
+  <data name="Part1.Intro" xml:space="preserve">
+    <value>strings.Part1.Intro</value>
+    <comment>To activate Windows you need to have an activation key.</comment>
+  </data>
+  <data name="Part1.KmsServer.Request" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Request</value>
+    <comment>Please enter the domain of the KMS server below:</comment>
+  </data>
+  <data name="Part1.KmsServer.Request.Name" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Request.Name</value>
+    <comment>KMS Server</comment>
+  </data>
+  <data name="Part1.KmsServer.Selection" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Selection</value>
+    <comment>Is your activation key managed by a KMS server?</comment>
+  </data>
+  <data name="Part1.KmsServer.Selection.DontKnow" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Selection.DontKnow</value>
+    <comment>I don't know what that means</comment>
+  </data>
+  <data name="Part1.KmsServer.Selection.Error" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Selection.Error</value>
+    <comment>Error on selection "KmsServer"...</comment>
+  </data>
+  <data name="Part1.KmsServer.Selection.No" xml:space="preserve">
+    <value>stringsPart1.KmsServer.Selection.No</value>
+    <comment>No, it isn't.</comment>
+  </data>
+  <data name="Part1.KmsServer.Selection.Yes" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Selection.Yes</value>
+    <comment>Yes, it is.</comment>
+  </data>
+  <data name="Part1.KmsServer.Setting" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Setting</value>
+    <comment>KMS Server is being set...</comment>
+  </data>
+  <data name="Part1.KmsServer.Setting.Error" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Setting.Error</value>
+    <comment>...</comment>
+  </data>
+  <data name="Part1.KmsServer.Setting.Success" xml:space="preserve">
+    <value>strings.Part1.KmsServer.Setting.Success</value>
+    <comment>KMS Server has been succesfully set.</comment>
+  </data>
+  <data name="Part1.NotUsingKmsServer" xml:space="preserve">
+    <value>strings.Part1.NotUsingKmsServer</value>
+    <comment>Not using a KMS server. Continuing...</comment>
+  </data>
+  <data name="Part1.Title" xml:space="preserve">
+    <value>strings.Part1.Title</value>
+    <comment>=== Part 1 - Activating Windows ===</comment>
+  </data>
+  <data name="Part1.TitleWindow" xml:space="preserve">
+    <value>strings.Part1.TitleWindow</value>
+    <comment>Activating Windows</comment>
+  </data>
+  <data name="Part1.UserSkippedActivation" xml:space="preserve">
+    <value>strings.Part1.UserSkippedActivation</value>
+    <comment>User has skipped the Windows Activation process.</comment>
+  </data>
+  <data name="Part1.WindowsActivating" xml:space="preserve">
+    <value>strings.Part1.WindowsActivating</value>
+    <comment>Your Windows installation is being activated...</comment>
+  </data>
+  <data name="Part1.WindowsActivation.Error" xml:space="preserve">
+    <value>strings.Part1.WindowsActivation.Error</value>
+    <comment>...</comment>
+  </data>
+  <data name="Part1.WindowsActivation.Success" xml:space="preserve">
+    <value>strings.Part1.WindowsActivation.Success</value>
+    <comment>Windows has been succesfully activated.</comment>
+  </data>
+  <data name="Part1.WindowsEditions" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions</value>
+    <comment>There are many different Windows editions available.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.BoughtOrSkip" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.BoughtOrSkip</value>
+    <comment>Press Enter if you have bought the activation key or press ESC to skip activation.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.ContinueOrInstructions" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.ContinueOrInstructions</value>
+    <comment>Press Enter to continue or press 1 to view detailed instructions on how to buy the activation key.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.LearnMore" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.LearnMore</value>
+    <comment>If you want to learn more about the different editions you can go to https://www.microsoft.com/en-us/windowsforbusiness/compare.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.OpeningInstructions" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.OpeningInstructions</value>
+    <comment>Opening instructions on how to buy the activation key...</comment>
+  </data>
+  <data name="Part1.WindowsEditions.OpeningLink" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.OpeningLink</value>
+    <comment>Opening {link}...</comment>
+  </data>
+  <data name="Part1.WindowsEditions.OpenMessage" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.OpenMessage</value>
+    <comment>WinClean will open Microsoft's page for you to buy an activation key for Windows 10 {edition}.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Overview" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Overview</value>
+    <comment>Here is a quick overview:</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Overview.Home" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Overview.Home</value>
+    <comment>Home - For users that want the standard Windows and everything that is needed for home use.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Overview.Pro" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Overview.Pro</value>
+    <comment>Pro - For users that want to get everything out of Windows and/or as a solid foundation for every business.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Overview.ProForWorkstations" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Overview.ProForWorkstations</value>
+    <comment>Pro for Workstations - For users that need to handle advanced workloads or have advanced data needs.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Selection" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Selection</value>
+    <comment>Which Windows edition do you want to buy?</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Selection.Error" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Selection.Error</value>
+    <comment>Error on selection "WindowsEditionsSelection"...</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Selection.Home" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Selection.Home</value>
+    <comment>Windows 10 Home</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Selection.Pro" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Selection.Pro</value>
+    <comment>Windows 10 Pro</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Selection.ProForWorkstations" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Selection.ProForWorkstations</value>
+    <comment>Windows 10 Pro for Workstations</comment>
+  </data>
+  <data name="Part1.WindowsEditions.Selection.Skip" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.Selection.Skip</value>
+    <comment>I changed my mind and want to skip the activation process.</comment>
+  </data>
+  <data name="Part1.WindowsEditions.SupportNote" xml:space="preserve">
+    <value>strings.Part1.WindowsEditions.SupportNote</value>
+    <comment>Note: WinClean does not support Enterprise CSP, Education, LTSC or other editions yet.</comment>
+  </data>
   <data name="Select" xml:space="preserve">
     <value>strings.Select</value>
     <comment>Select</comment>

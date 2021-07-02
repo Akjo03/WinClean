@@ -163,6 +163,18 @@ namespace WinClean {
             }
         }
 
+        public ConsoleKey ReadKeys(string text, List<ConsoleKey> keys) {
+            Console.Write(text);
+            while (true) {
+                ConsoleKey keyInput = Console.ReadKey(false).Key;
+                foreach (ConsoleKey key in keys) {
+                    if (keyInput == key) {
+                        return keyInput;
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Gets the reading time for a specified text
         /// </summary>
@@ -195,6 +207,17 @@ namespace WinClean {
                 readingTime += GetReadingTime(text);
             }
             return readingTime;
+        }
+
+        /// <summary>
+        /// Creates a new question for the user with the specified question and the name of the input
+        /// </summary>
+        /// <param name="question">The question the user should answer</param>
+        /// <param name="name">The name of the input</param>
+        /// <returns>The input from the user</returns>
+        public string CreateQuestion(string question, string name) {
+            Write(question);
+            Console.Write(" [" + name + "] > "); return Console.ReadLine().Trim();
         }
 
         /// <summary>

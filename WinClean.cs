@@ -19,7 +19,7 @@ namespace WinClean {
         /// <summary>
         /// List of parts that are availble in this version of WinClean
         /// </summary>
-        public static List<int> availableParts = new List<int>() { 0 };
+        public static List<int> availableParts = new List<int>() { 0, 1 };
 
         /// <summary>
         /// List of available locales (languages) in this version of WinClean
@@ -48,7 +48,7 @@ namespace WinClean {
             Registry = new RegistryHelper();
 
             // Create the windows (system) helper
-            Windows = new WinHelper(Registry);
+            Windows = new WinHelper(Console, Registry);
 
             // Create the locale helper and set the font
             Console.Font("Consolas", 24);
@@ -161,8 +161,171 @@ namespace WinClean {
             Console.Clear();
         }
 
-        private void Part1_ActivatingWindows() {
+        /// <summary>
+        /// Runs part 1. This will give the user the chance to activate Windows.
+        /// </summary>
+        private void Part1_ActivatingWindows(bool gotoInput = false) {
             Console.Clear();
+            Console.Title(Strings.Part1_TitleWindow);
+            Console.Write("", Strings.Part1_Title);
+            Console.Write("", "");
+
+            if (!Windows.IsActivated()) {
+                Console.Write(Strings.Part1_AlreadyActivated);
+                Thread.Sleep(Console.GetReadingTime(Strings.Part1_AlreadyActivated));
+                return;
+            } else {
+                Console.Write(Strings.Part1_Intro);
+
+                var hasActivationKeySelection = Console.CreateSelection(Strings.Part1_HasActivationKey_Selection, new List<ConsoleHelper.SelectionOption>() {
+                    new ConsoleHelper.SelectionOption(1, Strings.Part1_HasActivationKey_Selection_Yes),
+                    new ConsoleHelper.SelectionOption(2, Strings.Part1_HasActivationKey_Selection_No),
+                    new ConsoleHelper.SelectionOption(3, Strings.Part1_HasActivationKey_Selection_Skip)
+                });
+
+                switch (hasActivationKeySelection.Number) {
+                    case 1:
+                        var activationKey = Console.CreateQuestion(Strings.Part1_ActivationKey_Request, Strings.Part1_ActivationKey_Request_Name);
+                        Console.Write("", "");
+                       
+                        Console.Write(Strings.Part1_ActivationKeyInstallation_Installing);
+                        //Install the activation key
+                        Console.Write("", "");
+
+                        var isKmsSelection = Console.CreateSelection(Strings.Part1_KmsServer_Selection, new List<ConsoleHelper.SelectionOption>() {
+                            new ConsoleHelper.SelectionOption(1, Strings.Part1_KmsServer_Selection_DontKnow),
+                            new ConsoleHelper.SelectionOption(2, Strings.Part1_KmsServer_Selection_Yes),
+                            new ConsoleHelper.SelectionOption(3, Strings.Part1_KmsServer_Selection_No)
+                        });
+
+                        switch (isKmsSelection.Number) {
+                            case 1:
+                                Console.Write(Strings.Part1_NotUsingKmsServer);
+                                Thread.Sleep(200);
+                                break;
+
+                            case 2:
+                                var kmsDomain = Console.CreateQuestion(Strings.Part1_KmsServer_Request, Strings.Part1_KmsServer_Request_Name);
+                                
+                                // Set KMS server
+                                
+                                break;
+
+                            case 3:
+                                Console.Write(Strings.Part1_NotUsingKmsServer);
+                                Thread.Sleep(200);
+                                break;
+                        }
+
+                        // Activate Windows
+
+                        break;
+
+                    case 2:
+                        Console.Write(Strings.Part1_WindowsEditions);
+                        Console.Write("", "");
+                        Console.Write(Strings.Part1_WindowsEditions_Overview);
+                        Console.Write(Strings.Part1_WindowsEditions_Overview_Home);
+                        Console.Write(Strings.Part1_WindowsEditions_Overview_Pro);
+                        Console.Write(Strings.Part1_WindowsEditions_Overview_ProForWorkstations);
+                        Console.Write("", "");
+                        Console.Write(Strings.Part1_WindowsEditions_SupportNote);
+                        Console.Write("", "");
+                        Console.Write(Strings.Part1_WindowsEditions_LearnMore);
+                        Console.Write("", "");
+
+                        var windowsEditionSelection = Console.CreateSelection(Strings.Part1_WindowsEditions_Selection, new List<ConsoleHelper.SelectionOption>() {
+                            new ConsoleHelper.SelectionOption(1, Strings.Part1_WindowsEditions_Selection_Home),
+                            new ConsoleHelper.SelectionOption(2, Strings.Part1_WindowsEditions_Selection_Pro),
+                            new ConsoleHelper.SelectionOption(3, Strings.Part1_WindowsEditions_Selection_ProForWorkstations),
+                            new ConsoleHelper.SelectionOption(3, Strings.Part1_WindowsEditions_Selection_Skip)
+                        });
+
+                        switch (windowsEditionSelection.Number) {
+                            case 1:
+                                Console.Write(Strings.Part1_WindowsEditions_OpenMessage.Replace("{edition}", "Home"));
+                                
+                                var contOrInstrKey_H = Console.ReadKeys(Strings.Part1_WindowsEditions_ContinueOrInstructions, new List<System.ConsoleKey>() {
+                                    System.ConsoleKey.Enter,
+                                    System.ConsoleKey.D1
+                                });
+                                if (contOrInstrKey_H == System.ConsoleKey.D1) {
+                                    Console.Write(Strings.Part1_WindowsEditions_OpeningInstructions);
+                                    //Open detailed instructions
+                                }
+
+                                string link_H = "";
+                                Console.Write(Strings.Part1_WindowsEditions_OpeningLink.Replace("{link}", link_H));
+                                Console.RunCommand("start " + link_H);
+
+                                var boughtOrSkipKey_H = Console.ReadKeys(Strings.Part1_WindowsEditions_BoughtOrSkip, new List<System.ConsoleKey>() {
+                                    System.ConsoleKey.Enter,
+                                    System.ConsoleKey.Escape
+                                });
+                                switch (boughtOrSkipKey_H) {
+                                    case System.ConsoleKey.Escape:
+                                        Console.Write(Strings.Part1_UserSkippedActivation);
+                                        Thread.Sleep(Console.GetReadingTime(Strings.Part1_UserSkippedActivation));
+                                        return;
+
+                                    case System.ConsoleKey.Enter:
+                                        Part1_ActivatingWindows(true);
+                                        break;
+                                }
+                                break;
+
+                            case 2:
+                                Console.Write(Strings.Part1_WindowsEditions_OpenMessage.Replace("{edition}", "Home"));
+
+                                var contOrInstrKey_P = Console.ReadKeys(Strings.Part1_WindowsEditions_ContinueOrInstructions, new List<System.ConsoleKey>() {
+                                    System.ConsoleKey.Enter,
+                                    System.ConsoleKey.D1
+                                });
+                                if (contOrInstrKey_P == System.ConsoleKey.D1) {
+                                    Console.Write(Strings.Part1_WindowsEditions_OpeningInstructions);
+                                    //Open detailed instructions
+                                }
+
+                                string link_P = "";
+                                Console.Write(Strings.Part1_WindowsEditions_OpeningLink.Replace("{link}", link_P));
+                                Console.RunCommand("start " + link_P);
+
+                                var boughtOrSkipKey_P = Console.ReadKeys(Strings.Part1_WindowsEditions_BoughtOrSkip, new List<System.ConsoleKey>() {
+                                    System.ConsoleKey.Enter,
+                                    System.ConsoleKey.Escape
+                                });
+                                switch (boughtOrSkipKey_P) {
+                                    case System.ConsoleKey.Escape:
+                                        Console.Write(Strings.Part1_UserSkippedActivation);
+                                        Thread.Sleep(Console.GetReadingTime(Strings.Part1_UserSkippedActivation));
+                                        return;
+
+                                    case System.ConsoleKey.Enter:
+                                        Part1_ActivatingWindows(true);
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                break;
+
+                            case 4:
+                                break;
+
+                            default:
+                                Console.WriteError(Strings.Part1_WindowsEditions_Selection_Error);
+                                Thread.Sleep(Console.GetReadingTime(Strings.Part1_WindowsEditions_Selection_Error));
+                                break;
+                        }
+
+                        break;
+
+                    case 3:
+                        Console.Write(Strings.Part1_UserSkippedActivation);
+                        Thread.Sleep(Console.GetReadingTime(Strings.Part1_UserSkippedActivation));
+                        break;
+                }
+            }
 
             Console.Clear();
         }

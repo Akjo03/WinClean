@@ -196,6 +196,438 @@ namespace WinClean.resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.ActivationCheck.Error ähnelt.
+        /// </summary>
+        public static string Part1_ActivationCheck_Error {
+            get {
+                return ResourceManager.GetString("Part1.ActivationCheck.Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.ActivationKey.Request ähnelt.
+        /// </summary>
+        public static string Part1_ActivationKey_Request {
+            get {
+                return ResourceManager.GetString("Part1.ActivationKey.Request", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.ActivationKey.Request.Name ähnelt.
+        /// </summary>
+        public static string Part1_ActivationKey_Request_Name {
+            get {
+                return ResourceManager.GetString("Part1.ActivationKey.Request.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.ActivationKeyInstallation.Error ähnelt.
+        /// </summary>
+        public static string Part1_ActivationKeyInstallation_Error {
+            get {
+                return ResourceManager.GetString("Part1.ActivationKeyInstallation.Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.ActivationKeyInstallation.Installing ähnelt.
+        /// </summary>
+        public static string Part1_ActivationKeyInstallation_Installing {
+            get {
+                return ResourceManager.GetString("Part1.ActivationKeyInstallation.Installing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.ActivationKeyInstalled ähnelt.
+        /// </summary>
+        public static string Part1_ActivationKeyInstallation_Success {
+            get {
+                return ResourceManager.GetString("Part1.ActivationKeyInstallation.Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.AlreadyActivated ähnelt.
+        /// </summary>
+        public static string Part1_AlreadyActivated {
+            get {
+                return ResourceManager.GetString("Part1.AlreadyActivated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.HasActivationKey.Selection ähnelt.
+        /// </summary>
+        public static string Part1_HasActivationKey_Selection {
+            get {
+                return ResourceManager.GetString("Part1.HasActivationKey.Selection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.HasActivationKey.Selection.Error ähnelt.
+        /// </summary>
+        public static string Part1_HasActivationKey_Selection_Error {
+            get {
+                return ResourceManager.GetString("Part1.HasActivationKey.Selection.Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.HasActivationKey.Selection.No ähnelt.
+        /// </summary>
+        public static string Part1_HasActivationKey_Selection_No {
+            get {
+                return ResourceManager.GetString("Part1.HasActivationKey.Selection.No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.HasActivationKey.Selection.Skip ähnelt.
+        /// </summary>
+        public static string Part1_HasActivationKey_Selection_Skip {
+            get {
+                return ResourceManager.GetString("Part1.HasActivationKey.Selection.Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.HasActivationKey.Selection.Yes ähnelt.
+        /// </summary>
+        public static string Part1_HasActivationKey_Selection_Yes {
+            get {
+                return ResourceManager.GetString("Part1.HasActivationKey.Selection.Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.Intro ähnelt.
+        /// </summary>
+        public static string Part1_Intro {
+            get {
+                return ResourceManager.GetString("Part1.Intro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Request ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Request {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Request", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Request.Name ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Request_Name {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Request.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Selection ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Selection {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Selection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Selection.DontKnow ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Selection_DontKnow {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Selection.DontKnow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Selection.Error ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Selection_Error {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Selection.Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die stringsPart1.KmsServer.Selection.No ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Selection_No {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Selection.No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Selection.Yes ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Selection_Yes {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Selection.Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Setting ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Setting {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Setting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Setting.Error ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Setting_Error {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Setting.Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.KmsServer.Setting.Success ähnelt.
+        /// </summary>
+        public static string Part1_KmsServer_Setting_Success {
+            get {
+                return ResourceManager.GetString("Part1.KmsServer.Setting.Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.NotUsingKmsServer ähnelt.
+        /// </summary>
+        public static string Part1_NotUsingKmsServer {
+            get {
+                return ResourceManager.GetString("Part1.NotUsingKmsServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.Title ähnelt.
+        /// </summary>
+        public static string Part1_Title {
+            get {
+                return ResourceManager.GetString("Part1.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.TitleWindow ähnelt.
+        /// </summary>
+        public static string Part1_TitleWindow {
+            get {
+                return ResourceManager.GetString("Part1.TitleWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.UserSkippedActivation ähnelt.
+        /// </summary>
+        public static string Part1_UserSkippedActivation {
+            get {
+                return ResourceManager.GetString("Part1.UserSkippedActivation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsActivating ähnelt.
+        /// </summary>
+        public static string Part1_WindowsActivating {
+            get {
+                return ResourceManager.GetString("Part1.WindowsActivating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsActivation.Error ähnelt.
+        /// </summary>
+        public static string Part1_WindowsActivation_Error {
+            get {
+                return ResourceManager.GetString("Part1.WindowsActivation.Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsActivation.Success ähnelt.
+        /// </summary>
+        public static string Part1_WindowsActivation_Success {
+            get {
+                return ResourceManager.GetString("Part1.WindowsActivation.Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.BoughtOrSkip ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_BoughtOrSkip {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.BoughtOrSkip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.ContinueOrInstructions ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_ContinueOrInstructions {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.ContinueOrInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.LearnMore ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_LearnMore {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.OpeningInstructions ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_OpeningInstructions {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.OpeningInstructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.OpeningLink ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_OpeningLink {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.OpeningLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.OpenMessage ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_OpenMessage {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.OpenMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Overview ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Overview {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Overview.Home ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Overview_Home {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Overview.Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Overview.Pro ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Overview_Pro {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Overview.Pro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Overview.ProForWorkstations ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Overview_ProForWorkstations {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Overview.ProForWorkstations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Selection ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Selection {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Selection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Selection.Error ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Selection_Error {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Selection.Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Selection.Home ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Selection_Home {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Selection.Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Selection.Pro ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Selection_Pro {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Selection.Pro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Selection.ProForWorkstations ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Selection_ProForWorkstations {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Selection.ProForWorkstations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.Selection.Skip ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_Selection_Skip {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.Selection.Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die strings.Part1.WindowsEditions.SupportNote ähnelt.
+        /// </summary>
+        public static string Part1_WindowsEditions_SupportNote {
+            get {
+                return ResourceManager.GetString("Part1.WindowsEditions.SupportNote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die strings.Select ähnelt.
         /// </summary>
         public static string Select {
