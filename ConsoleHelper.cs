@@ -159,7 +159,7 @@ namespace WinClean {
             Write(message);
             ConsoleKey key = Console.ReadKey().Key;
             while (key != ConsoleKey.Enter) {
-                continue;
+                key = Console.ReadKey().Key;
             }
         }
 
