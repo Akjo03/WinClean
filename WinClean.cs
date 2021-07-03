@@ -19,20 +19,20 @@ namespace WinClean {
         /// <summary>
         /// List of parts that are availble in this version of WinClean
         /// </summary>
-        public static List<int> availableParts = new List<int>() { 0, 1 };
+        public static readonly  List<int> availableParts = new List<int>() { 0, 1 };
 
         /// <summary>
         /// List of available locales (languages) in this version of WinClean
         /// </summary>
-        public static List<string> availableLocale = new List<string>() { "en-us", "de-de" };
+        public static readonly  List<string> availableLocale = new List<string>() { "en-us", "de-de" };
 
-        private ConsoleHelper Console;
+        private readonly ConsoleHelper Console;
 
-        private LocaleHelper Locale;
+        private readonly LocaleHelper Locale;
 
-        private RegistryHelper Registry;
+        private readonly RegistryHelper Registry;
 
-        private WinHelper Windows;
+        private readonly WinHelper Windows;
 
         /// <summary>
         /// Creates the main instance of WinClean. Should only be called once.
@@ -90,7 +90,7 @@ namespace WinClean {
         /// </summary>
         /// <param name="args">Command line arguments</param>
         public static void Main(string[] args) {
-            new WinClean(args);
+            var mainApplication = new WinClean(args);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace WinClean {
         /// </summary>
         /// <param name="parts">A list of parts that should be run</param>
         /// <param name="locale">The locale that the WinClean app should run on. If this is null the user can choose the locale as long as Part 0 is ran.</param>
-        public void Start(List<int> parts, string locale) {
+        private void Start(List<int> parts, string locale) {
             Console.Clear();
 
             // Get language from user if part 0 is activated and not set already
@@ -254,15 +254,15 @@ namespace WinClean {
                                     //Open detailed instructions
                                 }
 
-                                string link_H = "";
-                                Console.Write(Strings.Part1_WindowsEditions_OpeningLink.Replace("{link}", link_H));
-                                Console.RunCommand("start " + link_H);
+                                string linkH = "";
+                                Console.Write(Strings.Part1_WindowsEditions_OpeningLink.Replace("{link}", linkH));
+                                Console.RunCommand("start " + linkH);
 
-                                var boughtOrSkipKey_H = Console.ReadKeys(Strings.Part1_WindowsEditions_BoughtOrSkip, new List<System.ConsoleKey>() {
+                                var boughtOrSkipKeyH = Console.ReadKeys(Strings.Part1_WindowsEditions_BoughtOrSkip, new List<System.ConsoleKey>() {
                                     System.ConsoleKey.Enter,
                                     System.ConsoleKey.Escape
                                 });
-                                switch (boughtOrSkipKey_H) {
+                                switch (boughtOrSkipKeyH) {
                                     case System.ConsoleKey.Escape:
                                         Console.Write(Strings.Part1_UserSkippedActivation);
                                         Thread.Sleep(Console.GetReadingTime(Strings.Part1_UserSkippedActivation));
@@ -277,24 +277,24 @@ namespace WinClean {
                             case 2:
                                 Console.Write(Strings.Part1_WindowsEditions_OpenMessage.Replace("{edition}", "Home"));
 
-                                var contOrInstrKey_P = Console.ReadKeys(Strings.Part1_WindowsEditions_ContinueOrInstructions, new List<System.ConsoleKey>() {
+                                var contOrInstrKeyP = Console.ReadKeys(Strings.Part1_WindowsEditions_ContinueOrInstructions, new List<System.ConsoleKey>() {
                                     System.ConsoleKey.Enter,
                                     System.ConsoleKey.D1
                                 });
-                                if (contOrInstrKey_P == System.ConsoleKey.D1) {
+                                if (contOrInstrKeyP == System.ConsoleKey.D1) {
                                     Console.Write(Strings.Part1_WindowsEditions_OpeningInstructions);
                                     //Open detailed instructions
                                 }
 
-                                string link_P = "";
-                                Console.Write(Strings.Part1_WindowsEditions_OpeningLink.Replace("{link}", link_P));
-                                Console.RunCommand("start " + link_P);
+                                string linkP = "";
+                                Console.Write(Strings.Part1_WindowsEditions_OpeningLink.Replace("{link}", linkP));
+                                Console.RunCommand("start " + linkP);
 
-                                var boughtOrSkipKey_P = Console.ReadKeys(Strings.Part1_WindowsEditions_BoughtOrSkip, new List<System.ConsoleKey>() {
+                                var boughtOrSkipKeyP = Console.ReadKeys(Strings.Part1_WindowsEditions_BoughtOrSkip, new List<System.ConsoleKey>() {
                                     System.ConsoleKey.Enter,
                                     System.ConsoleKey.Escape
                                 });
-                                switch (boughtOrSkipKey_P) {
+                                switch (boughtOrSkipKeyP) {
                                     case System.ConsoleKey.Escape:
                                         Console.Write(Strings.Part1_UserSkippedActivation);
                                         Thread.Sleep(Console.GetReadingTime(Strings.Part1_UserSkippedActivation));
@@ -326,7 +326,6 @@ namespace WinClean {
                         break;
                 }
             }
-
             Console.Clear();
         }
     }
